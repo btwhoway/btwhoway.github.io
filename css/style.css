@@ -1,0 +1,256 @@
+body {
+    font-family     : 'Noto Sans JP', sans-serif;
+    margin          : unset;
+    background-color: rgb(215, 215, 215);
+}
+
+.invalid {
+    background-color: rgb(246, 246, 246);
+    padding         : 25px;
+    margin-bottom   : 20px;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+}
+
+#now-on {
+    max-width: 1100px;
+    margin   : auto;
+}
+
+.invalid img {
+    filter: unset;
+    width : 400px;
+}
+
+.invalid p {
+    text-align: center;
+    font-size : 30px;
+    color     : grey;
+}
+
+header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    background-color: rgb(246, 246, 246);
+    padding         : 0 30px;
+}
+
+img {
+    filter: drop-shadow(1px 1px 3px grey);
+}
+
+header h1 {
+    color: rgb(0, 153, 153);
+}
+
+header input {
+    width  : 300px;
+    border : unset;
+    border : 1px solid lightgray;
+    padding: 7px 15px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container>img {
+    position: absolute;
+    top     : 6px;
+    left    : 299px;
+    width   : 20px;
+    cursor  : pointer;
+}
+
+nav {
+    display         : flex;
+    background-color: rgb(64, 64, 64);
+    color           : white;
+    padding-left    : 30px;
+    justify-content : left;
+}
+
+nav div {
+    padding: 10px 30px;
+    cursor : pointer;
+}
+
+.current-page {
+    border       : 0.3px solid grey;
+    border-bottom: 3px solid rgb(0, 153, 153);
+}
+
+#current-info,
+#current>div {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+#current-info div {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+
+#current>div>p:nth-child(2) {
+    margin     : unset;
+    color      : rgb(0, 153, 153);
+    font-weight: bold;
+}
+
+.box {
+    background-color: rgb(246, 246, 246);
+    padding         : 25px;
+    margin          : 25px;
+}
+
+.title {
+    color      : rgb(0, 153, 153);
+    font-weight: bold;
+    margin     : unset;
+}
+
+#current-info>div:nth-child(2)>p:nth-child(1) {
+    font-size: 40px;
+}
+
+#current-info {
+    font-weight: lighter;
+    margin     : 0 85px;
+}
+
+#current-info p {
+    margin: unset;
+}
+
+#current-info>div:nth-child(2)>p:nth-child(2) {
+    font-size: 15px;
+}
+
+#current tr td:nth-child(1) {
+    padding-right: 20px;
+}
+
+#current-info img {
+    width: 90px;
+}
+
+#hourly tr:nth-child(1)>td:nth-child(1) {
+    font-weight: bold;
+}
+
+#hourly tr td:nth-child(1) {
+    color        : grey;
+    padding-right: 20px;
+    position     : sticky;
+    top          : 0;
+    z-index      : 100;
+
+}
+
+#hourly table {
+    margin     : 10px;
+    font-weight: lighter;
+}
+
+#hourly td {
+    padding   : 10px;
+    text-align: center;
+}
+
+#hourly p {
+    position        : sticky;
+    left            : 0;
+    background-color: rgb(246, 246, 246);
+}
+
+#hourly {
+    overflow-x: scroll;
+}
+
+#hourly tr td:first-child {
+    position        : sticky;
+    left            : 0;
+    background-color: rgb(246, 246, 246);
+    text-align      : left;
+}
+
+#nearby {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    margin-top     : 10px;
+    font-weight    : lighter;
+}
+
+#nearby .wrapper {
+    display         : flex;
+    padding         : 5px 20px;
+    min-width       : 300px;
+    background-color: rgb(237, 237, 237);
+    margin          : 10px;
+    justify-content : space-between;
+    align-items     : center;
+}
+
+.wrapper div {
+    display    : flex;
+    align-items: center;
+}
+
+#nearby img {
+    width       : 70px;
+    height      : 70px;
+    margin-right: 10px;
+}
+
+#forecast {
+    max-width: 1100px;
+    margin   : auto;
+
+}
+
+#forecast>div {
+    display    : flex;
+    margin     : 25px;
+    font-weight: lighter;
+    overflow-x: scroll;
+}
+
+.days {
+    padding         : 25px;
+    margin-right    : 5px;
+    width           : 300px;
+    background-color: rgb(237, 237, 237);
+}
+
+.active {
+    background-color: rgb(246, 246, 246);
+
+}
+
+.days p {
+    margin: unset;
+}
+
+.days p:nth-child(4) {
+    font-size  : 30px;
+    font-weight: bolder;
+}
+
+.days p:nth-child(2),
+.days p:nth-child(5) {
+    color: grey;
+}
+
+#forecast>div.box {
+    display: block;
+}
+
+body > div:nth-child(5) {
+    max-width: 1100px;
+    margin   : auto;
+}
