@@ -1,0 +1,163 @@
+body {
+    background-color: #3c6e71;
+    font-family     : 'Noto Sans JP', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color     : white;
+}
+
+.title {
+    text-align: center;
+    font-size : larger;
+    color     : white;
+}
+
+.inline {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    color          : #353535;
+}
+
+.inline input,
+.inline select {
+    width        : 80%;
+    padding      : 5px;
+    border-radius: 5px;
+    color        : #353535;
+}
+
+.inline select {
+    width: 82%;
+}
+
+.box {
+    background-color: #d9d9d9;
+    padding         : 20px 10px 10px;
+    max-width       : 600px;
+    border          : 1px solid gray;
+    border-radius   : 5px;
+    margin          : auto;
+}
+
+.box div:last-child {
+    text-align: center;
+}
+
+#search,
+.details {
+    border          : 1px solid gray;
+    border-radius   : 5px;
+    background-color: #284b63;
+    padding         : 5px;
+    cursor          : pointer;
+    color           : white;
+    margin-top      : 10px;
+}
+
+#films {
+    display  : flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.details {
+    width     : 100px;
+    text-align: center;
+
+}
+
+div.info p:nth-child(3) {
+    margin: 7px;
+}
+
+.wrapper {
+    display         : flex;
+    width           : 300px;
+    margin          : 15px;
+    border          : 1px solid gray;
+    background-color: #d9d9d9;
+    border-radius   : 5px;
+    padding         : 10px;
+}
+
+.info {
+    display       : flex;
+    flex-direction: column;
+}
+
+.poster {
+    width            : 160px;
+    background-repeat: no-repeat;
+    background-size  : contain;
+    margin-right     : 5px;
+}
+
+.no-poster {
+    color           : white;
+    text-align      : center;
+    width           : 100px;
+    margin-right    : 20px;
+    background-color: #95B8D1;
+    padding-top     : 60px;
+}
+
+
+#film-info {
+    padding         : 10px;
+    border          : 1px solid gray;
+    border-radius   : 5px;
+    background-color: #d9d9d9;
+
+}
+
+#film-info>div {
+    display: flex;
+}
+
+.big-poster {
+    width            : 430px;
+    background-repeat: no-repeat;
+    background-size  : contain;
+    margin-right     : 10px;
+}
+
+table {
+    display: block;
+
+}
+
+td {
+    padding: 15px 0;
+}
+
+tr td:nth-child(1) {
+    font-weight  : bold;
+    padding-right: 25px;
+}
+
+#pages {
+    display    : flex;
+    align-items: center;
+    margin     : auto;
+    width      : 250px;
+
+}
+
+#pages div {
+    width           : 20px;
+    height          : 20px;
+    border          : 1px solid #353535;
+    border-radius   : 3px;
+    padding         : 4px;
+    margin          : 3px;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    color           : white;
+    background-color: #284b63;
+    cursor          : pointer;
+
+}

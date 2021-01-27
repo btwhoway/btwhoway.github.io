@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie search</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Movie search</h1>
+    <p class="title">Search:</p>
+    <div class="box">
+        <div class="inline">
+            <p>Title:</p>
+            <input type="text" name="title" value="Guardians">
+        </div>
+        <div class="inline">
+            <p>Type:</p>
+            <select name="" id="type">
+                <option value="movie">movie</option>
+                <option value="series">series</option>
+                <option value="episode">episode</option>
+            </select>
+        </div>
+        <div id="search">Search</div>
+    </div>
+    <p class="title one" hidden>Films:</p>
+    <div id="films"></div>
+    <div id="pages"></div>
+    <p class="title two" hidden>Film info:</p>
+    <div id="film-info" hidden></div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

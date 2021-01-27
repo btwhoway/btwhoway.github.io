@@ -1,0 +1,316 @@
+body {
+	background-color: rgb(230,230,230);
+	font-family: 'Segoe UI', sans-serif;
+	color:rgb(73,73,75);
+	margin: 0;
+	margin-right: 40px;
+}
+
+.body {
+	display: flex;
+}
+
+.page {
+	padding-bottom: 40px;
+	border-bottom: 0.5px solid rgb(180, 180, 201);
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+}
+
+/*MENU*/
+
+menu {
+	width: 20%;
+	height: 100vh;
+	box-shadow: 2px 0px 2px 1px rgba(113,118,118,0.54);
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	top:0;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(246,246,246);
+} 
+
+menu img {
+	width: 23px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 24px;
+	padding: 20px;
+	border-bottom: 0.5px solid rgb(180, 180, 201);
+}
+
+.line {
+	display: flex;
+	align-items: center;
+	padding: 20px 20px;
+	margin: 0 20px;
+}
+
+.line p {
+	margin: unset;
+}
+
+.line-pink {
+	background-color: rgb(215,0,76);
+	color: white;
+}
+
+.line img {
+	margin-right: 15px;
+}
+
+/*MAIN PART*/
+
+main {
+	width: 80%;
+	margin:20px;
+}
+
+.title-two{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.burger {
+	display: none;
+	padding-right: 20px;
+}
+
+.burger img {
+	width: 28px;
+}
+
+.page-name {
+	display: flex;
+	align-items: center;
+}
+
+.card {
+	margin-top:60px;
+	width: 100%;
+	background-color: rgb(246,246,246);
+	padding: 20px;
+	box-shadow: 2px 2px 2px 1px rgba(113,118,118,0.54);
+	margin-right: 20px;
+}
+
+.content {
+	display: flex;
+}
+
+/*FORM*/
+
+.headline {
+	background-color: rgb(215,0,76);
+	position: relative;
+	top: -50px;
+	padding: 20px;
+	color: white;
+}
+
+.headline p{
+	margin-top: 0;
+}
+
+.headline .small {
+	margin-bottom: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+textarea {
+	width: 100%;
+}
+
+input {
+	padding: 10px;
+}
+
+.first-line, .second-line, .third-line, .fourth-line {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.first-line div, .second-line div, .third-line div, .fourth-line div {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-right: 15px;
+} 
+
+.first-line div:last-child, .second-line div:last-child, .third-line div:last-child, .fourth-line div:last-child{
+	margin-right: unset;
+}
+
+input, textarea {
+	border: none;
+	background-color: unset;
+	border-bottom: 0.5px solid rgb(180, 180, 201);
+}
+
+.btn {
+	margin-left: 70%;
+}
+
+button {
+	color:white;
+	cursor: pointer;
+	border:unset;
+	background-color: rgb(215,0,76);
+	padding: 10px 40px;
+	margin-top: 10px;
+}
+
+.the-form {
+	width: 70%;
+}
+
+/*PERSON*/
+
+.person {
+	text-align: center;
+	width: 40%;
+	height: 55vh;
+}
+
+.ceo-img {
+	position: relative;
+	top:-80px;
+}
+
+.text-part {
+	margin-top: -40px;
+}
+
+.person img {
+	width: 200px;
+	border-radius: 50%;
+	object-fit: contain;
+	box-shadow: -2px 1px 32px -7px rgba(0,0,0,0.42);
+}
+
+.small-text {
+	font-size: 12px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/*FOOTER*/
+
+footer{
+	display: flex;
+	justify-content: space-between;
+}
+
+.left {
+	display: flex;
+	font-weight: bold;
+}
+
+.right {
+	padding: 20px;
+}
+
+.left p {
+	padding: 20px;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+	body {
+		margin: 0;
+	}
+	.content {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.the-form, .person {
+		width: 90%;
+		height: unset;
+		margin-right: 20px;
+	}
+	form {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		margin: 0;
+	}
+	menu {
+		display: none;
+	}
+	.burger {
+		display: inline;
+	}
+	.the-form, .person {
+		width: 100%;
+		height: unset;
+	}
+	.content {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.person {
+		width: 100%;
+		height: unset;
+	}
+	form {
+		margin-top: 30px;
+	}
+	.card {
+		margin-right: unset;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		margin: 0;
+	}
+	menu {
+		display: none;
+	}
+	.burger {
+		display: inline;
+	}
+	.the-form, .person {
+		width: 100%;
+		height: unset;
+	}
+	.first-line, .fourth-line {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-top: 10px;
+	}
+	.first-line div, .fourth-line div {
+		margin-top: 10px;
+	}
+	.content {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.person {
+		width: 100%;
+		height: unset;
+	}
+	form {
+		margin-top: 30px;
+	}
+	.card {
+		margin-right: unset;
+	}
+}

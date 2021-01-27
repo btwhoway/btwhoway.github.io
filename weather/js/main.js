@@ -43,8 +43,6 @@ function weatherToday() {
 
 let latitude, longitude;
 
-//пошук за геолокацією, не використовую через те що постійно запитує дозвіл 
-
 // function geoFindMe() {
 //     function success(position) {
 //         latitude = position.coords.latitude;

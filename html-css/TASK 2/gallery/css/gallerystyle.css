@@ -1,0 +1,92 @@
+body {
+	font-family: 'Cormorant Garamond', serif;
+	margin: 0;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: unset;
+}
+
+main {
+	margin: 0 100px 40px;
+}
+
+/*HEADER*/
+
+header {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid lightgrey;
+}
+
+header p{
+	margin-right: 30px;
+}
+
+header p:hover {
+	cursor: pointer;
+	color: grey;
+}
+
+.current {
+	font-weight: bold;
+}
+
+.left {
+	display: flex;
+	margin-left: 50px;
+}
+
+.nav-options {
+	display: flex;
+}
+
+.display-menu {
+	display: none;
+}
+
+.right {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-right: 50px;
+}
+
+.socials {
+	display: flex;
+}
+
+.socials div:hover {
+	cursor: pointer;
+}
+
+header img {
+	width: 20px;
+	margin-right: 20px;
+}
+/*GALLERY*/
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+}
+
+.gallery img {
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+}
+
+.title {
+	font-size: 40px;
+	text-align: center;
+	padding: 20px 50px;
+}
+
+
