@@ -434,9 +434,9 @@ function hourlyDay(data) {
 
         let month = nd.toLocaleString('en-UK', { month: 'short' });
 
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
+        // if (dd < 10) {
+        //     dd = '0' + dd;
+        // }
 
         if (dd === thisDay) {
             weekday = "TODAY";
