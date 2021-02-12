@@ -1,6 +1,6 @@
 body {
 	font-family: 'Cormorant Garamond', serif;
-	margin: 0;
+	margin     : 0;
 }
 
 button:hover {
@@ -9,24 +9,24 @@ button:hover {
 
 a {
 	text-decoration: none;
-	color: unset;
+	color          : unset;
 }
 
 /*HEADER*/
 
 header {
-	display: flex;
+	display        : flex;
 	justify-content: space-between;
-	border-bottom: 1px solid lightgrey;
+	border-bottom  : 1px solid lightgrey;
 }
 
-header p{
+header p {
 	margin-right: 30px;
 }
 
 header p:hover {
 	cursor: pointer;
-	color: grey;
+	color : grey;
 }
 
 .current {
@@ -34,7 +34,7 @@ header p:hover {
 }
 
 .left {
-	display: flex;
+	display    : flex;
 	margin-left: 50px;
 }
 
@@ -47,10 +47,10 @@ header p:hover {
 }
 
 .right {
-	display: flex;
+	display        : flex;
 	justify-content: space-around;
-	align-items: center;
-	margin-right: 50px;
+	align-items    : center;
+	margin-right   : 50px;
 }
 
 .socials {
@@ -62,35 +62,35 @@ header p:hover {
 }
 
 header img {
-	width: 20px;
+	width       : 20px;
 	margin-right: 20px;
 }
 
 /*MAIN*/
 
 .row img {
-	height: 100%;
+	height    : 100%;
 	object-fit: cover;
-	width: 100%;
+	width     : 100%;
 }
 
 .row {
-	display: flex;
+	display      : flex;
 	border-bottom: 1px solid lightgrey;
 }
 
-.text{
+.text {
 	margin: 6% 5%;
 }
 
 button {
-	padding: 10px 20px;
+	padding         : 10px 20px;
 	background-color: unset;
-	border:none;
-	border-radius: 2px;
-	border: 1px solid lightgrey;
-	margin-bottom: 20px;
-	color: grey;
+	border          : none;
+	border-radius   : 2px;
+	border          : 1px solid lightgrey;
+	margin-bottom   : 20px;
+	color           : grey;
 }
 
 /*GREETINGS ROW*/
@@ -115,7 +115,7 @@ button {
 
 .title_two {
 	font-size: 40px;
-	margin: 0;
+	margin   : 0;
 }
 
 .row-two {
@@ -133,34 +133,34 @@ button {
 /*GALLERY*/
 
 .gallery {
-	display: flex;
-	height: 300px;
+	display   : flex;
+	height    : 300px;
 	overflow-x: scroll;
 }
 
 .gallery img {
 	object-fit: contain;
-	height: 100%;
+	height    : 100%;
 }
 
 .gallery-title {
 	text-align: center;
-	padding: 50px;
+	padding   : 50px;
 }
 
 .hidden-hover {
-	display: none;
+	display : none;
 	position: absolute;
-	width: 100%;
-	height: 300px;
+	width   : 100%;
+	height  : 300px;
 }
 
 .hid-hov-text {
-	text-align: center;
-	width: 40%;
-	display: flex;
+	text-align    : center;
+	width         : 40%;
+	display       : flex;
 	flex-direction: column;
-	align-items: center;
+	align-items   : center;
 }
 
 .hid-hov-text button {
@@ -168,13 +168,13 @@ button {
 }
 
 .hid-hov-text button:hover {
-	color: black;
+	color           : black;
 	background-color: white;
 }
 
 .hidden-hover i {
 	font-size: 40px;
-	padding: 20px;
+	padding  : 20px;
 }
 
 .hidden-hover i:hover {
@@ -182,90 +182,93 @@ button {
 }
 
 .gallery:hover .hidden-hover {
-	color:white;
-	display: flex;
+	color          : white;
+	display        : flex;
 	justify-content: space-between;
-	align-items: center;
-	background: rgba(66, 73, 73, 0.5);
+	align-items    : center;
+	background     : rgba(66, 73, 73, 0.5);
 }
 
 /*FEATURES*/
 
 .features-title {
-	padding: 60px 50px 30px 50px;
+	padding   : 60px 50px 30px 50px;
 	text-align: center;
 }
 
 .grid {
-	display: grid;
+	display              : grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr 1fr;
-	margin: 0 10px;
-	text-align: center;
-	justify-content: center;
-	align-content: center;
+	grid-template-rows   : 1fr 1fr;
+	margin               : 0 10px;
+	text-align           : center;
+	justify-content      : center;
+	align-content        : center;
 }
 
 .grid div {
 	padding: 30px;
 }
 
-.grid div:nth-child(1), .grid div:nth-child(2) {
+.grid div:nth-child(1),
+.grid div:nth-child(2) {
 	border-bottom: 2px solid lightgrey;
-	border-right: 2px solid lightgrey;
+	border-right : 2px solid lightgrey;
 }
 
-.grid div:nth-child(3){
+.grid div:nth-child(3) {
 	border-bottom: 2px solid lightgrey;
 }
 
-.grid div:nth-child(4), .grid div:nth-child(5) {
+.grid div:nth-child(4),
+.grid div:nth-child(5) {
 	border-right: 2px solid lightgrey;
 }
 
 /*FORM*/
 
 form {
-	padding: 0 10% 50px 10%;
+	padding      : 0 10% 50px 10%;
 	border-bottom: 1px solid lightgrey;
 }
 
 .form-title {
-	padding: 70px 50px 60px 50px;
+	padding   : 70px 50px 60px 50px;
 	text-align: center;
 }
 
 .first-line {
-	display: flex;
+	display        : flex;
 	justify-content: space-between;
 }
 
 .first-line input {
-	width: auto;
-	margin: 5px 10px 0 0;
+	width        : auto;
+	margin       : 5px 10px 0 0;
 	border-radius: 3px;
-	border: none;
-	padding: 10px;
-	border: 1px solid lightgrey;
+	border       : none;
+	padding      : 10px;
+	border       : 1px solid lightgrey;
 }
 
-input[type="number"]{
+input[type="number"] {
 	margin: 5px 0 0 0;
 }
 
 .fl-input {
-	display: flex;
+	display       : flex;
 	flex-direction: column;
-	width: 100%;
+	width         : 100%;
 }
 
-form p, .fl-input label {
+form p,
+.fl-input label {
 	font-weight: bold;
 }
 
 .second-line {
-	margin-top: 10px;
-	display: flex;
+	margin-top : 10px;
+	display    : flex;
 	align-items: center;
 }
 
@@ -274,32 +277,32 @@ form p, .fl-input label {
 }
 
 select {
-	padding: 10px;
-	width: 100%;
+	padding      : 10px;
+	width        : 100%;
 	border-radius: 3px;
-	border:none;
-	border: 1px solid lightgrey;
+	border       : none;
+	border       : 1px solid lightgrey;
 }
 
 textarea {
-	width: 99%;
+	width        : 99%;
 	border-radius: 3px;
-	border:none;
-	border: 1px solid lightgrey;
+	border       : none;
+	border       : 1px solid lightgrey;
 }
 
 .fifth-line {
-	display: flex;
-	align-items: center;
+	display        : flex;
+	align-items    : center;
 	justify-content: space-between;
 }
 
 /*FOOTER*/
 
 footer img {
-	width: 25px;
+	width  : 25px;
 	padding: 5px;
-	filter: contrast(50%);
+	filter : contrast(50%);
 }
 
 footer img:hover {
@@ -308,14 +311,14 @@ footer img:hover {
 }
 
 footer {
-	display: flex;
+	display        : flex;
 	justify-content: center;
-	margin: 30px;
-	text-align: center;
+	margin         : 30px;
+	text-align     : center;
 }
 
 .footer-center {
-	display: flex;
+	display       : flex;
 	flex-direction: column;
 }
 
@@ -324,55 +327,67 @@ footer {
 }
 
 .footer-icons div {
-	display: flex;
-	align-items: center;
+	display      : flex;
+	align-items  : center;
 	border-radius: 50%;
-	border: 1px solid grey;
-	margin-right: 20px;
+	border       : 1px solid grey;
+	margin-right : 20px;
 }
 
 @media screen and (min-width: 600px) and (max-width: 850px) {
 	.socials {
 		display: none;
 	}
+
 	.display-menu {
 		display: none;
 	}
-	.greetings, .story, .storypic {
+
+	.greetings,
+	.story,
+	.storypic {
 		width: 100%;
 	}
-	.row-first, .row-two {
+
+	.row-first,
+	.row-two {
 		height: unset;
 	}
+
 	.grid {
-		display: grid;
+		display              : grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr 1fr 1fr;
-		margin: 0 10px;
-		text-align: center;
-		justify-content: center;
-		align-content: center;
+		grid-template-rows   : 1fr 1fr 1fr;
+		margin               : 0 10px;
+		text-align           : center;
+		justify-content      : center;
+		align-content        : center;
 	}
+
 	.grid div:nth-child(1) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
-		border-right: 2px solid lightgrey;
+		border-right : 2px solid lightgrey;
 	}
-	.grid div:nth-child(2){
-		border:none;
-		border-bottom: 2px solid lightgrey;
-	}
-	.grid div:nth-child(3){
-		border:none;
-		border-right: 2px solid lightgrey;
+
+	.grid div:nth-child(2) {
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
+	.grid div:nth-child(3) {
+		border       : none;
+		border-right : 2px solid lightgrey;
+		border-bottom: 2px solid lightgrey;
+	}
+
 	.grid div:nth-child(4) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
 	.grid div:nth-child(5) {
-		border:none;
+		border      : none;
 		border-right: 2px solid lightgrey;
 	}
 }
@@ -381,89 +396,148 @@ footer {
 	.nav-options {
 		display: none;
 	}
+
 	.socials {
 		display: none;
 	}
+
 	.mainpart {
-		display: flex;
+		display       : flex;
 		flex-direction: column;
 	}
-	.greetings, .story, .storypic {
+
+	.greetings,
+	.story,
+	.storypic {
 		width: 100%;
 	}
-	.row-first, .row-two {
+
+	.row-first,
+	.row-two {
 		height: unset;
 	}
+
 	.row-first div:last-child {
 		height: 80vh;
 	}
+
 	.storypic {
 		height: 60vh;
 	}
+
 	.display-menu {
 		display: block;
 	}
-	.text{
+
+	.text {
 		margin: 50px;
-		width: auto;
+		width : auto;
 	}
+
 	.title {
 		margin: 0;
 	}
-	.row-first{
-		display: flex;
-		flex-direction: column-reverse;
+
+	.row-first {
+		display        : flex;
+		flex-direction : column-reverse;
 		justify-content: center;
 	}
-	.rt-flex{
-		display: flex;
+
+	.rt-flex {
+		display       : flex;
 		flex-direction: column;
 	}
-	.rth-flex{
-		display: flex;
+
+	.rth-flex {
+		display       : flex;
 		flex-direction: column-reverse;
 	}
+
 	.grid {
-		display:flex;
-		flex-direction: column;
-		margin: 0 10px;
-		text-align: center;
+		display        : flex;
+		flex-direction : column;
+		margin         : 0 10px;
+		text-align     : center;
 		justify-content: center;
-		align-content: center;
+		align-content  : center;
 	}
+
 	.grid div:nth-child(1) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
-	.grid div:nth-child(2){
-		border:none;
+
+	.grid div:nth-child(2) {
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
-	.grid div:nth-child(3){
-		border:none;
+
+	.grid div:nth-child(3) {
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
 	.grid div:nth-child(4) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
 	.grid div:nth-child(5) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
 	.grid div:nth-child(6) {
-		border:none;
+		border       : none;
 		border-bottom: 2px solid lightgrey;
 	}
+
 	.first-line {
-		display: flex;
+		display       : flex;
 		flex-direction: column;
 	}
+
 	.first-line div {
 		margin-top: 10px;
 	}
+
 	.first-line input {
-		margin: unset;
+		margin    : unset;
 		margin-top: 5px;
 	}
+}
+
+/* js */
+#menu-small {
+	position        : absolute;
+	right           : 10px;
+	top             : 50px;
+	background-color: white;
+	padding         : 20px;
+}
+
+#tours {
+	display: flex;
+	border-bottom: 1px solid lightgrey;
+	overflow: scroll;
+}
+
+.tour-box {
+	width        : 400px;
+	padding      : 10px;
+	margin       : 10px;
+	border       : 1px solid lightgrey;
+	border-radius: 10px;
+}
+
+#tours>div>div {
+	width: 350px;
+	height: 230px;
+}
+
+#tours>div>div>img {
+	object-fit: contain;
+	width     : 100%;
+	height: 100%;
 }
