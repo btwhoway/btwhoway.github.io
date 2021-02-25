@@ -110,7 +110,7 @@ document.querySelector("#start").addEventListener("click", () => {
                 let labelbox = document.createElement("div");
 
                 let name = document.createElement("input");
-                let letters = /^[A-Za-z]+$/;
+                let letters = /^[a-z ,.'-]+$/i;
                 let label = document.createElement("label");
                 label.innerHTML = "Enter your name:";
                 label.appendChild(name);
