@@ -518,9 +518,9 @@ footer {
 }
 
 #tours {
-	display: flex;
+	display      : flex;
 	border-bottom: 1px solid lightgrey;
-	overflow: scroll;
+	overflow     : scroll;
 }
 
 .tour-box {
@@ -529,15 +529,121 @@ footer {
 	margin       : 10px;
 	border       : 1px solid lightgrey;
 	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.tour-box p {
+	margin: 10px 3px;
+}
+
+.tour-box button {
+	margin-bottom: unset;
+	width        : 100%;
 }
 
 #tours>div>div {
-	width: 350px;
+	width : 350px;
 	height: 230px;
 }
 
 #tours>div>div>img {
 	object-fit: contain;
 	width     : 100%;
-	height: 100%;
+	height    : 100%;
+}
+
+#choose>p {
+	font-size: 30px;
+	margin   : 10px 20px;
+}
+
+.checkout {
+	background-color: white;
+	border-radius   : 50%;
+	width           : 50px !important;
+	height          : 50px !important;
+	position        : fixed;
+	top             : 30px;
+	right           : 10px;
+	border          : 3px solid black;
+	text-align      : center;
+	padding         : 10px;
+	cursor          : pointer;
+	box-shadow      : 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+.checkout i {
+	font-size: 40px;
+}
+
+.checkout-box {
+	background-color  : white;
+	position          : fixed;
+	top               : 50%;
+	left              : 50%;
+	padding           : 10px;
+	box-shadow        : 0px 0px 16px 5px rgba(34, 32, 32, 0.75);
+	-webkit-box-shadow: 0px 0px 16px 5px rgba(34, 32, 32, 0.75);
+	-moz-box-shadow   : 0px 0px 16px 5px rgba(34, 32, 32, 0.75);
+	transform         : translate(-50%, -50%);
+	width             : 500px !important;
+	height            : 400px !important;
+}
+
+.checkout-box p {
+	text-align: center;
+	margin-top: 20px !important;
+}
+
+.checkout-box>div:nth-child(1) {
+	width : 100%;
+	height: 150px;
+	margin: 0;
+}
+
+.checkout-box img {
+	object-fit: cover;
+	width     : 100%;
+	height    : 100%;
+}
+
+.modal-back {
+	background-color: rgba(110, 110, 110, 0.75);
+	width           : 100% !important;
+	height          : 100% !important;
+	position        : fixed;
+	top             : 0;
+	right           : 0;
+}
+
+.checkout-box input::-webkit-outer-spin-button,
+.checkout-box input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin            : 0;
+}
+
+.checkout-box input {
+	margin-left: 10px;
+}
+
+.checkout-box>div {
+	margin-bottom: 10px;
+}
+
+.checkout-box button {
+	margin-top: 50px;
+}
+.checkout-box button:nth-child(1){
+	margin-right: 5px;
+}
+
+.notify {
+	--notify-error  : #520e0e;
+	--notify-success: #1a271c;
+}
+
+.checkout-box > div:nth-child(5) {
+	display: flex;
+	justify-content: center;
+margin: 0;
 }

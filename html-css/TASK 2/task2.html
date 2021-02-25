@@ -3,9 +3,11 @@
 
 <head>
 	<title>HTML&CSS</title>
-	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+
 	<script src="https://kit.fontawesome.com/5bbd38659c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -61,7 +63,8 @@
 				<div class="text greetings">
 					<p class="title">Let's hit the road</p>
 					<p class="content">Can't believe you still don't have plans with your friends! Let's gather together
-						and get the best experiense that you can only imagine! Choose anything you like, everything is on us, just pick the right
+						and get the best experiense that you can only imagine! Choose anything you like, everything is
+						on us, just pick the right
 						tour and promise us to bring a good mood with you :)</p>
 					<p>Click Start to find out more about the tour that we provide. If you will have any questions
 						after, do not hesitate to write to us!</p>
@@ -69,7 +72,9 @@
 				</div>
 				<div class="greetings"><img src="icons/1.jpg" alt=""></div>
 			</div>
-			<div id="tours" > </div>
+			<div id="choose">
+
+			</div>
 			<div class="row row-two rt-flex">
 				<div class="storypic" id="story"><img src="icons/2.jpg" alt=""></div>
 				<div class="text story">
@@ -166,44 +171,44 @@
 		<form action="">
 			<div class="first-line">
 				<div class="fl-input">
-					<label for="">Name:</label>
-					<input type="text" required="required">
+					<label for="name">Name:</label>
+					<input type="text" id="name">
 				</div>
 				<div class="fl-input">
-					<label for="">Email:</label>
-					<input type="email" required="required">
+					<label for="email">Email:</label>
+					<input type="email" id="email">
 				</div>
 				<div class="fl-input">
-					<label for="">Phone:</label>
-					<input type="number" required="required" minlength="11">
+					<label for="phone">Phone:</label>
+					<input type="tel" minlength="11" id="phone">
 				</div>
 			</div>
 			<div class="second-line">
 				<p>Contact me via:</p>
-				<label for="contact"><input type="radio" id="contact">Email</label>
-				<label for="contact"><input type="radio" id="contact">Phone</label>
-				<label for="contact"><input type="radio" id="contact">Telegram</label>
+				<label><input type="radio" name="contact">Email</label>
+				<label><input type="radio" name="contact">Phone</label>
+				<label><input type="radio" name="contact">Telegram</label>
 			</div>
 			<div class="third-line">
 				<p>Topic</p>
-				<select name="" id="topic" required="required">
-					<option value="">Post my story</option>
-					<option value="">Tag my pictures</option>
-					<option value="">Need a consultation</option>
-					<option value="">Payment problem</option>
-					<option value="">Next tours</option>
+				<select name="" id="topic">
+					<option value="Post my story">Post my story</option>
+					<option value="Tag my pictures">Tag my pictures</option>
+					<option value="Need a consultation">Need a consultation</option>
+					<option value="Payment problem">Payment problem</option>
+					<option value="Next tours">Next tours</option>
 				</select>
 			</div>
 			<div class="fourth-line">
 				<p>Message</p>
-				<textarea name="" id="" cols="60" rows="10"></textarea>
+				<textarea name="comments" id="" cols="60" rows="10"></textarea>
 			</div>
 			<div class="fifth-line">
 				<div>
-					<label for=""><input type="checkbox" required="required">I am a human</label>
+					<label><input type="checkbox" id="human">I am a human</label>
 				</div>
 				<div>
-					<button>SEND</button>
+					<button type="button">SEND</button>
 				</div>
 			</div>
 		</form>
@@ -222,6 +227,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/simple-notify@0.2.1/dist/simple-notify.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 
