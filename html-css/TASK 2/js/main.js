@@ -83,16 +83,32 @@ document.querySelector("#start").addEventListener("click", () => {
         let btn = document.createElement("button");
         btn.innerHTML = "BOOK";
         box.appendChild(btn);
+        let checkout = document.createElement("div");
+
         btn.addEventListener("click", () => {
-            let checkout = document.createElement("div");
+            let checkoutExists = document.querySelector(".checkout");
+            if (checkoutExists) {
+                document.querySelector(".checkout").remove();
+            }
+
             checkout.classList.add("checkout");
             checkout.innerHTML = '<i class="fas fa-route"></i>';
+            checkout.hidden = false;
             box.appendChild(checkout);
 
             checkout.addEventListener("click", () => {
+                let modalExists = document.querySelector(".modal-back");
+                if (modalExists) {
+                    document.querySelector(".modal-back").remove();
+                }
                 let modalback = document.createElement("div");
                 modalback.classList.add("modal-back");
                 checkout.hidden = true;
+                
+                let infoExists = document.querySelector(".checkout-box");
+                if (infoExists) {
+                    document.querySelector(".checkout-box").remove();
+                }
                 let checkoutInfo = document.createElement("div");
                 checkoutInfo.classList.add("checkout-box");
 
@@ -196,7 +212,7 @@ document.querySelector("form button").addEventListener("click", () => {
     let phoneValidator = /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?/;
     let checkbox = document.querySelector("#human");
 
-    if (emailValidator.test(email) === true && name !== "" && phoneValidator.test(phone) === true && checkbox.checked === true)  {
+    if (emailValidator.test(email) === true && name !== "" && phoneValidator.test(phone) === true && checkbox.checked === true) {
         document.querySelector("form").reset();
         pushNotify("Success", "We'll contact you", 'success')
     } else pushNotify("Hmm.. Something went wrong", "Check if your info is correct", "error")
