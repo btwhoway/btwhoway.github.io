@@ -160,7 +160,9 @@ document.querySelector("#start").addEventListener("click", () => {
                 box.appendChild(checkoutInfo);
 
                 checkoutBtn.addEventListener("click", () => {
-                    if (name.value === "" || !name.value.match(letters) || phone.value === "") {
+                    let phone = document.querySelector("input[type='tel']").value;
+                    let phoneValidator = /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?/;
+                    if (name.value === "" || !name.value.match(letters) || phone.value === "" || phoneValidator.test(phone) !== true) {
                         pushNotify("Something is wrong..", `You need to enter the correct data`, "error");
 
                     } else {
@@ -211,8 +213,9 @@ document.querySelector("form button").addEventListener("click", () => {
     let phone = document.querySelector("#phone").value;
     let phoneValidator = /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?/;
     let checkbox = document.querySelector("#human");
+    let textarea = document.querySelector("textarea").value;
 
-    if (emailValidator.test(email) === true && name !== "" && phoneValidator.test(phone) === true && checkbox.checked === true) {
+    if (textarea !== "" && emailValidator.test(email) === true && name !== "" && phoneValidator.test(phone) === true && checkbox.checked === true) {
         document.querySelector("form").reset();
         pushNotify("Success", "We'll contact you", 'success')
     } else pushNotify("Hmm.. Something went wrong", "Check if your info is correct", "error")
