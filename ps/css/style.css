@@ -1,0 +1,312 @@
+body {
+  margin: 0;
+}
+header, main, footer.bottomfooter {
+  margin: 0px 220px;
+}
+
+.mainhead {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.mainhead img {
+  object-fit: contain;
+}
+
+ul.nav {
+  list-style: none;
+  text-align: right;
+  font-family: "Bitter";
+  font-size: 16px;
+  color: rgb(34, 34, 34);
+  padding: 0;
+}
+
+ul.nav li {
+  display: inline;
+  padding: 15px;
+}
+
+.nav li:last-child {
+  padding-right: 0;
+}
+
+.nav li:hover {
+  color: rgb(134, 200, 64);
+  cursor: pointer;
+}
+
+.nav li:before {
+  content: '\25CF';
+  opacity: 0;
+  margin-right: 3px;
+}
+
+.nav li:hover:before {
+  opacity: 1;
+}
+
+.title {
+  font-size: 36px;
+  font-family: "Bitter";
+  color: rgb(17, 17, 17);
+  font-weight: bold;
+  text-align: center;
+}
+
+.paragraph1 {
+  font-size: 16px;
+  font-family: "Lato";
+  color: rgb(17, 17, 17);
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.section1 {
+  margin-bottom: 60px;
+  margin-top: 90px;
+}
+
+.iconspart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.title2 {
+  font-size: 20px;
+  font-family: "Lato";
+  color: rgb(17, 17, 17);
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+
+}
+
+.paragraph2 {
+  font-size: 16px;
+  font-family: "Lato";
+  color: rgb(17, 17, 17);
+  line-height: 1.5;
+  text-align: center;
+
+}
+
+.calendar, .present, .check {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  align-items: center;
+}
+
+hr {
+  border: 1px solid rgb(232, 231, 231);
+  border-bottom-width: 0;
+  margin: 50px 0 80px 0;
+}
+
+.present {
+  border-left: 4px dotted lightgrey;
+  border-right: 4px dotted lightgrey;
+}
+
+.firstline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.firstline div, .secondline div {
+  width: 310px;
+  margin: 15px;
+}
+
+.firstline div{
+  margin-right: 75px;
+}
+
+.firstline div:last-child {
+  margin-right:0;
+}
+
+.secondline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold
+}
+
+.job {
+  color: #777;
+}
+
+.team  {
+  font-size: 18px;
+  font-family: "Lato";
+  color: rgb(17, 17, 17);
+  text-align: center;
+}
+
+
+.topfooter {
+  background-color: #222222;
+  padding: 20px 210px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.smalltitle {
+  color: white;
+  font-family: "Bitter";
+  font-weight: bold;
+}
+
+div.visitshop {
+  width: 450px;
+}
+
+.shop {
+  display: flex;
+  flex-direction: row;
+  color: #eeeeee;
+  font-family: "Lato";
+  padding-top: 25px;
+}
+
+.shop div {
+  padding-left: 25px;
+}
+
+.shop div p {
+  margin-top: 0;
+}
+
+.buttongreen {
+  border-radius: 2px;
+  background-color: rgb(134, 200, 64);
+  position: absolute;
+  padding: 7px 34px 7px 20px;
+  margin-top: 15px !important;
+}
+
+.buttongreen:hover {
+  cursor: pointer;
+}
+
+div.tweetsbox {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  padding-left: 70px;
+}
+
+.tweetsbox .smalltitle {
+  padding-left: 13px;
+}
+
+li.tweets {
+  list-style: url(../images/Twitter.png);
+  list-style-position: outside;
+  font-family: "Lato";
+  color: #eeeeee;
+  padding-bottom: 18px;
+
+}
+
+.hashtag {
+  text-decoration: underline;
+}
+
+.hashtag:hover {
+  cursor: pointer;
+}
+
+.smalltext {
+  font-size: small;
+}
+
+.bottomfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Lato";
+  font-size: 14px;
+  padding-left: 0;
+}
+
+.botfoot ul {
+  padding-left: 0;
+}
+
+.botfoot li{
+  display: inline-block;
+  font-family: "Lato";
+  font-size: 14px;
+  list-style: none;
+  padding: 23px;
+  text-align: left;
+}
+
+.botfoot li:hover {
+  color: rgb(134, 200, 64);
+  cursor: pointer;
+}
+
+.botfoot li:first-child {
+  padding-left: 0;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 23px;
+}
+
+.social-icons div {
+  background-color: #222;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+}
+
+.social-icons div:hover {
+  cursor: pointer;
+}
+
+.tw {
+  background-image: url(../images/Twitter.png);
+}
+
+.fb {
+  background-image: url(../images/Facebook.png);
+}
+
+.pnt {
+  background-image: url(../images/Pinterest.png);
+}
+
+.google {
+  background-image: url(../images/Google+.png);
+}
+
+.botfoot p{
+  padding: 23px;
+}
+
+
