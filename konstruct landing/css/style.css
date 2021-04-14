@@ -1,0 +1,247 @@
+body {
+    margin: unset;
+}
+
+.main-img {
+    background       : url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size  : contain;
+    width            : 100%;
+    height           : 110vh;
+    min-height       : 770px;
+    display          : flex;
+    flex-direction   : column;
+    justify-content  : space-between;
+    align-items      : center;
+    color            : white;
+}
+
+#logo {
+    padding: 41px;
+}
+
+.bigtitle {
+    font-family   : 'Bebas Neue';
+    font-size     : 60px;
+    word-spacing  : 10px;
+    letter-spacing: 5px;
+    margin-bottom : 5px;
+}
+
+.smalltitle,
+.scroll {
+    text-align : center;
+    font-family: 'Open Sans';
+}
+
+.scroll {
+    word-spacing  : 10px;
+    letter-spacing: 3px;
+    padding-bottom: 71px;
+}
+
+.wrapper {
+    width          : 950px;
+    display        : flex;
+    align-items    : center;
+    margin         : auto;
+    justify-content: space-between;
+    padding        : 25px 0;
+}
+
+hr {
+    margin: 0;
+}
+
+header {
+    width      : 100%;
+    font-family: 'Open Sans';
+    font-weight: 600;
+}
+
+nav ul {
+    list-style     : none;
+    margin         : unset;
+    display        : flex;
+    justify-content: space-between;
+    width          : 100%;
+    padding        : unset;
+}
+
+nav li:not(:last-child) {
+    padding-right: 50px;
+}
+
+.current {
+    color: rgba(0, 164, 229, 1);
+}
+
+main article {
+    align-items: flex-end;
+    margin-bottom: 100px;
+}
+
+#story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#story h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#line {
+margin-bottom: 50px;
+}
+
+main {
+    font-family: 'Open Sans';
+    width      : 950px;
+    margin     : auto;
+}
+
+.text-box {
+    width: 405px;
+}
+
+.blue {
+    color: #00A4E5;
+}
+
+.main-txt {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #48555B;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    letter-spacing: 0.42px;
+}
+
+.thin-txt {
+    font-size: 13px;
+    font-weight: 400px;
+    margin-bottom: unset;
+}
+
+.story-img {
+    height: 225px;
+    margin-right: 20px;
+}
+
+.story-img:last-child {
+    margin-right: unset;
+}
+
+#capabilities {
+    margin-bottom: 70px;
+}
+
+.underline {
+    border-bottom: 2px solid #00A4E5;
+    padding-bottom: 10px;
+}
+
+.align-right {
+    display        : flex;
+    align-items    : center;
+    width          : 600px;
+    justify-content: space-between;
+}
+
+.align-right p {
+    font-size: 11px;
+    color: rgba(72, 85, 91, 1);
+    letter-spacing: 0.2px;
+    width: 405px;
+}
+
+button {
+    border: none;
+    background: #00A4E5;
+    color: white;
+    font-size: 13px;
+    width    : 150px;
+    height: 40px;
+    text-align: center;
+}
+
+main article,
+.images,
+#capabilities,
+#capability-items {
+    display        : flex;
+    justify-content: space-between;
+}
+
+.item {
+    border: 1px solid rgba(230, 230, 230, 1);
+    color: #48555B;
+    width: 295px;
+    height: 330px;
+    box-sizing: border-box;
+}
+
+.bold {
+    font-weight: 700;
+    letter-spacing: 0.42px;
+    padding: 0 23px;
+}
+
+.skinny {
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    padding: 0 23px;
+
+}
+
+.item-img{
+    padding: 35px 0 0 23px;
+}
+
+#get-in-touch {
+    background       : url(../img/bottom.png);
+    background-repeat: no-repeat;
+    background-size  : 100%;
+    min-height       : 498px;
+    width            : 100%;
+    height           : 75vh;
+    font-family: 'Open Sans';
+
+}
+
+.second-wrap {
+    width : 950px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 115px;
+}
+
+#big-title {
+    color: rgba(72, 85, 91, 1);
+    padding-top: 120px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    background-color: black;
+    width           : 100%;
+    color           : white;
+    font-family: 'Open Sans';
+
+}
+
+.foot-wrap {
+    width : 950px;
+    margin: auto;
+}
+
+#contacts {
+    display: flex;
+}
