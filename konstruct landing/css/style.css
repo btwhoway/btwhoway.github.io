@@ -44,6 +44,23 @@ button:hover,
     word-spacing  : 10px;
     letter-spacing: 3px;
     padding-bottom: 71px;
+    text-shadow   : 5px 4px 1px rgb(82, 110, 113);
+    animation: dance 5s infinite ease-in-out;
+    cursor        : pointer;
+}
+
+@keyframes dance {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .wrapper {
@@ -107,7 +124,7 @@ main {
     font-family: 'Open Sans';
     width      : 950px;
     margin     : auto;
-    color: rgba(72, 85, 91, 1);
+    color      : rgba(72, 85, 91, 1);
 }
 
 .text-box {
@@ -239,10 +256,10 @@ main article,
 }
 
 footer {
-    background : #171819;
-    width      : 100%;
-    color      : white;
-    font-family: 'Open Sans';
+    background    : #171819;
+    width         : 100%;
+    color         : white;
+    font-family   : 'Open Sans';
     letter-spacing: 0.85px;
 }
 
