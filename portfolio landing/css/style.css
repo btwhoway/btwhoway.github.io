@@ -1,0 +1,227 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin     : unset;
+}
+
+/* main  */
+
+ul {
+    list-style     : none;
+    display        : flex;
+    justify-content: space-between;
+    margin         : unset;
+    padding        : 30px 0 20px;
+    font-size      : 18px;
+    color          : rgb(130, 130, 130);
+}
+
+ul li:hover {
+    color: black;
+}
+
+ul li:first-child {
+    color: black;
+}
+
+.content-wrapper {
+    margin: auto;
+    width : 945px;
+}
+
+header,
+main,
+section,
+footer {
+    width: 100%;
+}
+
+main {
+    padding-bottom: 90px;
+}
+
+#margo {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 35px 0 60px;
+}
+
+.img-wrapper {
+    width: 100%;
+}
+
+.img-wrapper img {
+    object-fit: contain;
+    width     : 100%;
+}
+
+#name {
+    font-size: 47px;
+    margin   : unset;
+}
+
+#general-info {
+    text-align: right;
+}
+
+#general-info p {
+    margin: 0;
+}
+
+#general-info,
+a {
+    font-weight: 400;
+    font-size  : 18px;
+}
+
+nav a {
+    text-decoration: unset;
+}
+
+.title,
+ul,
+#name,
+#lang {
+    font-weight: bold;
+}
+
+.title {
+    font-size : 34px;
+    text-align: center;
+    padding   : 60px;
+    margin    : unset;
+}
+
+#lang {
+    writing-mode    : vertical-lr;
+    text-orientation: sideways;
+}
+
+.current-lang {
+    color: #828282;
+}
+
+/* sections */
+
+#info {
+    font-weight: 400;
+    font-size  : 20px;
+    width      : 450px;
+    text-align : center;
+    margin     : auto;
+}
+
+#about {
+    padding-bottom: 40px;
+}
+
+#skills,
+footer {
+    padding-bottom: 70px;
+}
+
+section#skills .skills-div {
+    display        : flex;
+    justify-content: space-between;
+    font-weight    : bold;
+    font-size      : 14px;
+    color          : rgb(130, 130, 130);
+}
+
+section#skills .skills-div>div {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : center;
+    flex-wrap      : wrap;
+    width          : 170px;
+}
+
+.stars {
+    margin-top     : 20px;
+    display        : flex;
+    justify-content: space-between;
+}
+
+section#skills .skills-div>.figma {
+    justify-content: space-between;
+}
+
+section#portfolio .example {
+    margin: 40px 0 20px 0;
+}
+
+section#portfolio .first {
+    margin: unset;
+}
+
+section#portfolio div:last-child {
+    padding-bottom: 30px;
+    margin-bottom : unset;
+}
+
+section#portfolio div.img-wrapper img {
+    margin: 35px 0 15px;
+}
+
+section#portfolio .first div.img-wrapper img {
+    margin-top: unset;
+}
+
+a {
+    color     : unset;
+    text-align: center;
+}
+
+footer .content-wrapper div {
+    display        : flex;
+    justify-content: space-between;
+    margin         : auto;
+    width          : 340px;
+}
+
+footer img:hover {
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, .4));
+}
+
+footer .title {
+    padding-bottom: 30px;
+}
+
+footer button {
+    margin          : auto;
+    color           : white;
+    background-color: rgba(7, 7, 7, 1);
+    border          : none;
+    border-radius   : 50px;
+    padding         : 10px 15px;
+    font-weight     : bold;
+    font-size       : 18px;
+    margin-top      : 30px;
+}
+
+#chat {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    text-align     : center;
+    padding-bottom : 30px;
+}
+
+#chat p {
+    margin: unset;
+}
+
+
+.grey {
+    font-size : 14px;
+    color     : rgba(130, 130, 130, 1);
+    text-align: center;
+    margin    : 45px 0 0;
+}
+
+section#about,
+section#portfolio {
+    background: rgba(244, 244, 244, 1);
+}
