@@ -24,6 +24,7 @@ header p {
     text-align    : center;
     flex-wrap     : wrap;
     box-shadow    : 1px 1px 20px 6px #96BBBB;
+    margin-bottom: 50px;
 }
 
 a {
