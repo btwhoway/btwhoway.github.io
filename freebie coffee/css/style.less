@@ -1,0 +1,101 @@
+@primarycolor    : #415167;
+@accentcolor     : #C7A17A;
+@lightaccentcolor: #F9F5E8;
+@darkgrey        : #151D28;
+@lightgrey       : #EDF0F5;
+
+* {
+    margin: unset;
+}
+
+header {
+    display        : flex;
+    justify-content: right;
+    width          : 100%;
+    height         : 768px;
+margin-bottom: 85px;
+    div {
+        width              : 100%;
+        background-image   : url("../img/bg.png");
+        background-position: right;
+        background-repeat  : no-repeat;
+        background-size    : contain;
+        display            : flex;
+        justify-content    : space-between;
+        flex-direction     : column;
+        margin-left        : 190px;
+
+        #logo {
+            width     : 220px;
+            margin-top: 75px;
+        }
+
+        #main-title {
+            font-family  : 'Montserrat', sans-serif;
+            font-weight  : 900;
+            font-size    : 54px;
+            color        : @primarycolor;
+            margin-bottom: 65px;
+
+            span {
+                background-color: @accentcolor;
+                color           : white;
+            }
+        }
+    }
+
+    nav {
+        width           : 275px;
+        background-color: @primarycolor;
+        color           : @lightaccentcolor;
+
+        img {
+            padding: 85px 55px 120px;
+        }
+
+        ul {
+            li {
+                list-style-type: none;
+                margin-bottom  : 30px;
+            }
+        }
+    }
+}
+
+
+.title-small {
+    color      : @primarycolor;
+    font-family: 'Nunito', sans-serif;
+    text-align : center;
+}
+
+.title-big {
+    color      : @primarycolor;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size  : 30px;
+    text-align : center;
+
+}
+
+article {
+    margin-bottom: 130px;
+    #info {
+        display: flex;
+        margin : auto;
+
+        div {
+            width          : 230px;
+            display        : flex;
+            justify-content: space-between;
+            flex-direction : column;
+
+            p {
+                text-align : center;
+                color      : @darkgrey;
+                font-family: 'Nunito', sans-serif;
+            }
+        }
+    }
+
+}
