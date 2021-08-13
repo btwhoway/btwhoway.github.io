@@ -35,7 +35,7 @@ header div #main-title span {
   color: white;
 }
 header nav {
-  width: 275px;
+  min-width: 275px;
   background-color: #415167;
   color: #F9F5E8;
 }
