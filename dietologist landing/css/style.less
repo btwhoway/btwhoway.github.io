@@ -1,16 +1,35 @@
-@green: #618B4A;
+@green     : #618B4A;
 @lightgreen: #AFBC88;
+@bluish    : #7AA095;
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    margin: unset;
+    margin     : unset;
 }
 
 header {
-    display        : flex;
-    justify-content: space-between;
-    width          : 600px;
-    margin         : 20px 150px 0 150px;
+    margin: 0 100px;
+    width           : 100%;
+    padding         : 20px 50px 0 50px;
+    top             : 0;
+    position        : fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index         : 2;
+
+    #wrapper {
+        width          : 800px;
+        display        : flex;
+        justify-content: space-between;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: @green;
 }
 
 .logo {
@@ -31,41 +50,219 @@ header {
 }
 
 main {
-    margin: 0 100px 0 100px;
-    display: flex;
-    align-items: center;
-    .title {
-        font-size  : 75px;
-        font-weight: bold;
-        margin-bottom: 10px ;
-    }
-    .small-ttl {
-        font-size  : 35px;
-        font-weight: lighter;
-        padding: 5px 10px;
-        margin: unset;
-        background-color: @lightgreen;
-        width: 200px;
-    }
-    .intro {
-        width: 650px;
-        font-weight: 300;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    margin        : 0 100px;
+
+    margin-top   : 100px;
+    margin-bottom: 70px;
+
+    #maininfo {
+        display    : flex;
+        align-items: center;
+
+        .bigtitle {
+            font-size    : 75px;
+            font-weight  : bold;
+            margin-bottom: 10px;
+        }
+
+        .small-ttl {
+            font-size       : 35px;
+            font-weight     : lighter;
+            padding         : 5px 10px;
+            margin          : unset;
+            background-color: @lightgreen;
+            width           : 200px;
+        }
+
+        .intro {
+            width      : 650px;
+            font-weight: 300;
+        }
+
+        .main-img {
+            img {
+                width: 500px;
+            }
+        }
+
     }
 
-    .main-img{
+    #scroll {
+        display    : flex;
+        align-items: center;
+        color      : grey;
+        margin-top : 50px;
+
         img {
-        width: 600px;
+            width : 40px;
+            height: 40px;
+        }
+    }
+}
+
+#about {
+    margin : 0 100px;
+    padding: 55px 0;
+
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    margin-bottom  : 50px;
+
+
+    img {
+        width  : 380px;
+        padding: 50px;
+
+    }
+
+    p {
+        font-weight: 300;
+        padding    : 0 60px;
+    }
+
+    #name {
+        font-size   : 75px;
+        margin      : unset;
+        padding-left: 60px;
+    }
+}
+
+
+.title {
+    font-size   : 75px;
+    margin      : unset;
+    padding-left: 60px;
+}
+
+#services {
+    margin : 0 100px;
+    padding: 55px 0;
+
+    font-weight: lighter;
+
+    ol>li {
+        padding-top: 10px;
+
+    }
+
+    ul>li {
+        list-style-type: circle;
+    }
+
+    #service-list {
+        display        : flex;
+        justify-content: center;
+    }
+}
+
+#feedback {
+    margin     : 0 100px 20px;
+    padding    : 55px 0;
+    font-weight: lighter;
+
+    #album {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        margin-top     : 20px;
+
+        img {
+            height : 300px;
+            padding: 10px;
+        }
+    }
+}
+
+#contact {
+    padding         : 20px 100px;
+    height          : 585px;
+    color           : white;
+    background-color: @bluish;
+
+    .wrapper {
+        width          : 800px;
+        display        : flex;
+        justify-content: space-evenly;
+        align-items    : center;
+        margin         : auto;
+
+        img {
+            width: 255px;
+
+        }
+
+        .questions {
+            display       : flex;
+            flex-direction: column;
+
+            textarea,
+            input {
+                padding: 5px 0 5px 20px;
+            }
+
+            label {
+                margin-top: 10px;
+            }
+
+            button {
+                font-size       : 16px;
+                color           : white;
+                border          : unset;
+                background-color: #40531B;
+                padding         : 10px;
+                margin-top      : 15px;
+            }
+        }
+
+        #icons {
+            padding        : 0 20px;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+
+            img {
+                width  : 40px;
+                padding: 15px;
+
+            }
         }
     }
 
+
 }
 
-#scroll {
-    margin:auto;
-    display: flex;
-    align-items: center;
-    img{
-        width: 40px;
-        height: 40px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    header {
+        margin: 20px 0 0 20px;
+
+    }
+
+    .main-img {
+        display: none;
     }
 }
