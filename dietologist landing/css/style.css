@@ -180,6 +180,9 @@ main #scroll img {
   width: 40px;
   padding: 15px;
 }
+#contact #copyright {
+  text-align: center;
+}
 @media screen and (max-width: 900px) {
   header {
     margin: 20px 0 0 20px;
