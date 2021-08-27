@@ -22,6 +22,7 @@ a {
 }
 a:hover {
   color: #618B4A;
+  cursor: pointer;
 }
 .logo {
   display: flex;
@@ -74,10 +75,22 @@ main #scroll {
   align-items: center;
   color: grey;
   margin-top: 50px;
+  animation: dance 5s infinite ease-in-out;
 }
 main #scroll img {
   width: 40px;
   height: 40px;
+}
+@keyframes dance {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 #about {
   margin: 0 100px;

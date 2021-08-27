@@ -30,6 +30,7 @@ a {
 
 a:hover {
     color: @green;
+    cursor: pointer;
 }
 
 .logo {
@@ -95,11 +96,28 @@ main {
         align-items: center;
         color      : grey;
         margin-top : 50px;
+    animation: dance 5s infinite ease-in-out;
+
 
         img {
             width : 40px;
             height: 40px;
         }
+    }
+}
+
+
+@keyframes dance {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }
 
