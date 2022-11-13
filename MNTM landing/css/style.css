@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+}
+
+.background img {
+  width: 100%;
+}
+
+.background .bgDim {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.background .img2 {
+  margin-top: -200px;
+}
+
+.background .img3 {
+  margin-top: -544px;
+}
+
+.background .img4 {
+  margin-top: -360px;
+}
+
+.wrapper {
+  color: white;
+  font-family: 'Chronicle Display', sans serif;
+}
+
+.head {
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.head nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.head nav li {
+  padding: 0.5em;
+  list-style-type: none;
+}
+
+.head .account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Gilroy', sans serif;
+}
+
+.hero .socials svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/*# sourceMappingURL=style.css.map */
