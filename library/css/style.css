@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f1edf3;
+}
+
+h1 {
+  padding: 0.5em 1em;
+  color: #0e8794;
+}
+
+nav {
+  width: 100%;
+  background-color: #252728;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  padding-left: 2em;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding: 0.7em 1.5em;
+  border-left: 0.1px solid grey;
+}
+
+hr {
+  margin: 0 1em;
+  border-width: 0.5px;
+}
+
+.addings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2em 1.7em;
+}
+
+.addings p {
+  color: #0e8794;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.addings button {
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  border: 0.1px solid grey;
+}
+
+.add-book {
+  position: absolute;
+  left: 25%;
+  z-index: 2;
+  background-color: #c3d6e1;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  width: 50vw;
+  padding: 1rem;
+}
+
+.add-book .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+
+.add-book .modal-header .modal-title {
+  margin-left: 8rem;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.add-book .modal-header .modalX {
+  padding: 7px 7px 3px;
+  border: 1px solid grey;
+  border-radius: 20px;
+}
+
+.add-book form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.add-book form label {
+  margin: 1em 0;
+}
+
+.add-book input {
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  border: 0.1px solid grey;
+}
+
+.add-book button {
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  border: 0.1px solid grey;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2em 1.7em;
+}
+
+.search button {
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  border: 0.1px solid grey;
+}
+
+.search input,
+.search select {
+  padding: 0.6em 1.5em;
+  border-radius: 5px;
+  border: 0.1px solid grey;
+}
+
+.books-table {
+  padding: 1em 1.7em;
+}
+
+.books-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.books-table table th, .books-table table td {
+  border: 2px solid grey;
+  padding: 0.5rem;
+}
+
+.visitors-table {
+  padding: 1em 1.7em;
+}
+
+.visitors-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.visitors-table table th, .visitors-table table td {
+  border: 2px solid grey;
+  padding: 0.5rem;
+}
+
+.cards-table {
+  padding: 1em 1.7em;
+}
+
+.cards-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cards-table table th, .cards-table table td {
+  border: 2px solid grey;
+  padding: 0.5rem;
+}
+/*# sourceMappingURL=style.css.map */

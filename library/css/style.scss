@@ -1,0 +1,177 @@
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    // margin: 0 10em;
+    background-color: #f1edf3;
+}
+
+$titles: rgb(14, 135, 148);
+
+@mixin button-input {
+    padding      : 0.6em 1.5em;
+    border-radius: 5px;
+    border       : 0.1px solid grey;
+}
+
+@mixin actions-styles {
+    display        : flex;
+    align-content  : center;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 1.2em 1.7em;
+}
+
+@mixin basic-table {
+    padding: 1em 1.7em;
+
+    table {
+        border-collapse: collapse;
+        width          : 100%;
+
+        th, td {
+            border : 2px solid grey;
+            padding: 0.5rem;
+        }
+    }
+}
+
+h1 {
+    padding: 0.5em 1em;
+    color  : $titles;
+}
+
+nav {
+    width           : 100%;
+    background-color: rgb(37, 39, 40);
+
+    ul {
+        display     : flex;
+        color       : white;
+        padding-left: 2em;
+
+        li {
+            list-style-type: none;
+            padding        : 0.7em 1.5em;
+            border-left    : 0.1px solid grey;
+        }
+    }
+}
+
+hr {
+    margin      : 0 1em;
+    border-width: 0.5px;
+
+}
+
+.addings {
+    @include actions-styles;
+
+    p {
+        color         : $titles;
+        font-size     : 1.1rem;
+        font-weight   : bold;
+        text-transform: uppercase;
+    }
+
+    button {
+        @include button-input;
+    }
+}
+
+.add-book {
+    position        : absolute;
+    left            : 25%;
+    z-index         : 2;
+    background-color: rgb(195, 214, 225);
+    border          : 0.5px solid grey;
+    border-radius   : 5px;
+    width           : 50vw;
+    padding         : 1rem;
+
+    .modal-header {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        font-weight: bold;
+
+        .modal-title {
+            margin-left: 8rem;
+            font-size  : 1.4em;
+            text-align : center;
+        }
+
+        .modalX {
+            padding: 7px 7px 3px;
+            border: 1px solid grey;
+            border-radius: 20px;
+        }
+    }
+
+    form {
+        display       : flex;
+        flex-wrap     : wrap;
+        align-items   : flex-end;
+        flex-direction: column;
+        align-content : space-around;
+
+        label {
+            margin: 1em 0;
+        }
+    }
+
+    input {
+        @include button-input;
+    }
+
+    button {
+        @include button-input;
+
+    }
+}
+
+.overlay {
+    position       : fixed;
+    top            : 0;
+    bottom         : 0;
+    left           : 0;
+    right          : 0;
+    width          : 100%;
+    height         : 100%;
+    background     : rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index        : 1;
+}
+
+.hidden{
+    display: none;
+}
+
+.search {
+    @include actions-styles;
+
+    button {
+        @include button-input;
+    }
+
+    input,
+    select {
+        @include button-input;
+    }
+}
+
+.books-table {
+    @include basic-table;
+}
+
+.visitors-table {
+    @include basic-table;
+}
+
+.cards-table {
+    @include basic-table;
+}

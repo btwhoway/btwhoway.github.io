@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>LIBRARY</h1>
+        <nav id="top-navigation">
+            <ul>
+                <li id="books">Books</li>
+                <li id="visitors">Visitors</li>
+                <li id="cards">Cards</li>
+                <li id="stats">Statistics</li>
+            </ul>
+        </nav>
+
+        <!-- CHANGABLE -->
+        <div class="books" data-section="books">
+
+            <div class="addings">
+                <p>All books:</p>
+                <button id="add-book-button">Add a book</button>
+            </div>
+
+            <div class="add-book hidden">
+                <div class="modal-header">
+                    <p class="modal-title">Add a book</p>
+                    <p class="modalX">
+                        <?xml version="1.0" ?><svg fill="none" height="16" viewBox="0 0 16 16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M5.17157 8.00003L0.585785 3.41424L3.41421 0.585815L8 5.1716L12.5858 0.585815L15.4142 3.41424L10.8284 8.00003L15.4142 12.5858L12.5858 15.4142L8 10.8285L3.41421 15.4142L0.585785 12.5858L5.17157 8.00003Z"
+                                fill="#030708" fill-rule="evenodd" />
+                        </svg>
+                    </p>
+                </div>
+                <form>
+                    <label>Book Title:
+                        <input name="book_title" type="text" value="Twilight">
+                    </label>
+                    <label>Author:
+                        <input name="book_author" type="text"  value="Stephanie Meyer">
+                    </label>
+                    <label>Publish Date:
+                        <input name="book_publish_date" type="text" value="2005">
+                    </label>
+                    <label>Pages:
+                        <input name="book_pages" type="text" value="498">
+                    </label>
+                    <label>Quantity:
+                        <input name="book_quantity" type="text" value="5">
+                    </label>
+                    <label>Published by:
+                        <input name="book_publisher" type="text" value="Little, Brown and Company">
+                    </label>
+                    <div>
+                        <button type="button">Cancel</button>
+                        <button class="add-to-table" type="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="overlay hidden"></div>
+            <hr>
+            <div class="search">
+                <div>
+                    <label>Sort by:
+                        <select>
+                            <option value="value1">ID</option>
+                            <option value="value2">Title</option>
+                            <option value="value3">Author</option>
+                            <option value="value4">Publish date</option>
+                            <option value="value5">Number of pages</option>
+                            <option value="value6">Quantity</option>
+                            <option value="value7">Published by</option>
+                        </select>
+                    </label>
+                    <button>Sort</button>
+                </div>
+                <div>
+                    <label>Find a book:
+                        <input type="text">
+                    </label>
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <div class="books-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publish date</th>
+                            <th>Pages</th>
+                            <th>Quantity</th>
+                            <th>Published by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- CHANGABLE -->
+        <div class="visitors" data-section="visitors" hidden>
+
+            <div class="addings">
+                <p>All visitors:</p>
+                <button>New visitor</button>
+            </div>
+            <hr>
+            <div class="search">
+                <div>
+                    <label>Sort by:
+                        <select>
+                            <option value="value1">ID</option>
+                            <option value="value2">Name</option>
+                            <option value="value3">Phone number</option>
+                        </select>
+                    </label>
+                    <button>Sort</button>
+                </div>
+                <div>
+                    <label>Search:
+                        <input type="text">
+                    </label>
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <div class="visitors-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <!-- CHANGABLE -->
+        <div class="cards" data-section="cards" hidden>
+
+            <div class="addings">
+                <p>All cards:</p>
+                <button>New card</button>
+            </div>
+            <hr>
+            <div class="search">
+                <div>
+                    <label>Sort by:
+                        <select>
+                            <option value="value1">ID</option>
+                            <option value="value1">Visitor</option>
+                            <option value="value2">Book</option>
+                            <option value="value3">Borrow Date</option>
+                            <option value="value3">Return Date</option>
+                        </select>
+                    </label>
+                    <button>Sort</button>
+                </div>
+                <div>
+                    <label>Search:
+                        <input type="text">
+                    </label>
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <div class="cards-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Visitor</th>
+                            <th>Book</th>
+                            <th>Borrow Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+
+
+
+    </header>
+
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
