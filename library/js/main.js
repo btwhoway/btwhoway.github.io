@@ -127,10 +127,7 @@ function submitForm(event) {
 
             return;
         }
-
-
     }
-
     addTableRow(bookData);
 }
 
@@ -242,3 +239,30 @@ function sortBooks() {
 for (const book of books1) {
     addTableRow(book);
 }
+
+document.getElementById("search").addEventListener("click", searchTable);
+
+let input = document.querySelector("#search-input");
+input.addEventListener("input", searchTable);
+
+function searchTable() {
+    let filter = input.value.toLowerCase();
+    let rows = tbody.rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        let tds = rows[i].getElementsByTagName("TD");
+
+        for (let j = 1; j < tds.length; j++) {
+            let txtValue = tds[j].textContent;
+
+            rows[i].hidden = true;
+
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                rows[i].hidden = false;
+                break;
+            }
+        }
+    }
+}
+
+
