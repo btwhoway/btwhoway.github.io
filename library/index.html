@@ -43,22 +43,22 @@
                 </div>
                 <form>
                     <label>Book Title:
-                        <input name="book_title" type="text" value="Twilight">
+                        <input name="book_title" type="text" required>
                     </label>
                     <label>Author:
-                        <input name="book_author" type="text"  value="Stephanie Meyer">
+                        <input name="book_author" type="text" required>
                     </label>
-                    <label>Publish Date:
-                        <input name="book_publish_date" type="text" value="2005">
+                    <label>Published Date:
+                        <input name="book_published" type="number" required>
                     </label>
                     <label>Pages:
-                        <input name="book_pages" type="text" value="498">
+                        <input name="book_pages" type="number" required>
                     </label>
                     <label>Quantity:
-                        <input name="book_quantity" type="text" value="5">
+                        <input name="book_quantity" type="number" required>
                     </label>
                     <label>Published by:
-                        <input name="book_publisher" type="text" value="Little, Brown and Company">
+                        <input name="book_publisher" type="text" required>
                     </label>
                         <button class="add-to-table" type="button">Submit</button>
                 </form>
@@ -78,7 +78,7 @@
                 </div>
                 <div>
                     <label>Find a book:
-                        <input type="text">
+                        <input type="search">
                     </label>
                     <button>Search</button>
                 </div>

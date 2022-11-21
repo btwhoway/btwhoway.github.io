@@ -2,7 +2,7 @@ const books1 = [
     {
         "book_title": "Twilight",
         "book_author": "Stephanie Meyer",
-        "book_publish_date": "2005",
+        "book_published": "2005",
         "book_pages": "498",
         "book_quantity": "5",
         "book_publisher": "Little, Brown and Company"
@@ -10,7 +10,7 @@ const books1 = [
     {
         "book_title": "New moon",
         "book_author": "Stephanie Meyer",
-        "book_publish_date": "2006",
+        "book_published": "2006",
         "book_pages": "563",
         "book_quantity": "4",
         "book_publisher": "Little, Brown and Company"
@@ -18,7 +18,7 @@ const books1 = [
     {
         "book_title": "Eclipse",
         "book_author": "Stephanie Meyer",
-        "book_publish_date": "2007",
+        "book_published": "2007",
         "book_pages": "629",
         "book_quantity": "3",
         "book_publisher": "Little, Brown and Company"
@@ -26,7 +26,7 @@ const books1 = [
     {
         "book_title": "Breaking dawn",
         "book_author": "Stephanie Meyer",
-        "book_publish_date": "2008",
+        "book_published": "2008",
         "book_pages": "756",
         "book_quantity": "9",
         "book_publisher": "Little, Brown and Company"
@@ -34,14 +34,14 @@ const books1 = [
     {
         "book_title": "Interview with the vampire",
         "book_author": "Anne Rice",
-        "book_publish_date": "1976",
+        "book_published": "1976",
         "book_pages": "371",
         "book_quantity": "27",
         "book_publisher": "Knopf"
     },
 ];
 
-const topNavigation = document.getElementById("top-navigation"); //nav
+const topNavigation = document.getElementById("top-navigation");
 
 topNavigation.addEventListener("click", function (event) {
     const target = event.target;
@@ -55,10 +55,10 @@ topNavigation.addEventListener("click", function (event) {
 });
 
 function highlightNavTab(sectionName) {
-    const tab = document.getElementById(sectionName); //li
+    const tab = document.getElementById(sectionName);
 
     topNavigation.querySelectorAll("ul > li").forEach(function (el) {
-        el.style.borderBottom = "none"; //li style
+        el.style.borderBottom = "none";
     });
 
     tab.style.borderBottom = "2px solid rgb(88 202 215)";
@@ -73,7 +73,8 @@ function showSection(sectionName) {
 }
 
 //books
-// maybe make it universal
+const form = document.querySelector(".add-book form");
+
 let addBookModal = document.querySelector(".add-book");
 let overlay = document.querySelector(".overlay");
 
@@ -87,6 +88,7 @@ function modalOpen() {
 document.querySelector(".modalX").addEventListener("click", modalClose)
 
 function modalClose() {
+    form.reset();
     overlay.classList.add("hidden");
     addBookModal.classList.add("hidden");
 }
@@ -97,8 +99,6 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-
-const form = document.querySelector(".add-book form");
 document.querySelector(".add-to-table").addEventListener("click", submitForm)
 
 function submitForm(event) {
@@ -107,7 +107,29 @@ function submitForm(event) {
     const formData = new FormData(form);
 
     const bookData = Object.fromEntries(formData.entries());
-    console.log(bookData)
+    console.log(bookData);
+
+    for (let data in bookData) {
+        let value = bookData[data];
+        console.log(value);
+        if (value === "" || value === " ") {
+            document.querySelector(".add-to-table").style.color = "red";
+
+            return;
+        }
+
+        let year = new Date().getFullYear();
+        console.log(year)
+
+        if (+bookData["book_published"] <= 0 || +bookData["book_published"] > year || +bookData["book_pages"] <= 0 || +bookData["book_quantity"] <= 0) {
+            document.querySelector(".add-to-table").style.color = "red";
+            document.querySelector(".add-to-table").style.border = "2px solid red";
+
+            return;
+        }
+
+
+    }
 
     addTableRow(bookData);
 }
@@ -125,6 +147,7 @@ function addTableRow(bookData) {
 
         let td = document.createElement("td");
         td.textContent = bookData[data];
+        td.style.textTransform = "capitalize";
 
         tr.appendChild(td);
     }
