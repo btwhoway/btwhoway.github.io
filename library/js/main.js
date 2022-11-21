@@ -1,3 +1,46 @@
+const books1 = [
+    {
+        "book_title": "Twilight",
+        "book_author": "Stephanie Meyer",
+        "book_publish_date": "2005",
+        "book_pages": "498",
+        "book_quantity": "5",
+        "book_publisher": "Little, Brown and Company"
+    },
+    {
+        "book_title": "New moon",
+        "book_author": "Stephanie Meyer",
+        "book_publish_date": "2006",
+        "book_pages": "563",
+        "book_quantity": "4",
+        "book_publisher": "Little, Brown and Company"
+    },
+    {
+        "book_title": "Eclipse",
+        "book_author": "Stephanie Meyer",
+        "book_publish_date": "2007",
+        "book_pages": "629",
+        "book_quantity": "3",
+        "book_publisher": "Little, Brown and Company"
+    },
+    {
+        "book_title": "Breaking dawn",
+        "book_author": "Stephanie Meyer",
+        "book_publish_date": "2008",
+        "book_pages": "756",
+        "book_quantity": "9",
+        "book_publisher": "Little, Brown and Company"
+    },
+    {
+        "book_title": "Interview with the vampire",
+        "book_author": "Anne Rice",
+        "book_publish_date": "1976",
+        "book_pages": "371",
+        "book_quantity": "27",
+        "book_publisher": "Knopf"
+    },
+];
+
 const topNavigation = document.getElementById("top-navigation"); //nav
 
 topNavigation.addEventListener("click", function (event) {
@@ -67,7 +110,6 @@ function submitForm(event) {
     console.log(bookData)
 
     addTableRow(bookData);
-
 }
 
 function addTableRow(bookData) {
@@ -76,8 +118,7 @@ function addTableRow(bookData) {
     let td = document.createElement("td");
 
     let rowsCount = document.querySelectorAll("tbody tr");
-    console.log(rowsCount)
-    td.textContent = rowsCount.length+1;
+    td.textContent = rowsCount.length + 1;
     tr.appendChild(td);
 
     for (let data in bookData) {
@@ -87,8 +128,94 @@ function addTableRow(bookData) {
 
         tr.appendChild(td);
     }
-
     tbody.appendChild(tr);
-    console.log("added data")
     modalClose();
+}
+
+let sortButton = document.querySelector(".sort-select");
+sortButton.addEventListener("click", () => { sortBooks() });
+
+// function sortBooks() {
+
+
+//     let tbody, rows, switching, i, x, y, shouldSwitch;
+//     tbody = document.querySelector(".books-table tbody");
+//     switching = true;
+
+
+//     while (switching) {
+
+//         switching = false;
+//         rows = tbody.rows;
+
+//         for (i = 0; i < (rows.length - 1); i++) {
+
+//             shouldSwitch = false;
+
+//             x = rows[i].getElementsByTagName("TD")[1];
+//             y = rows[i + 1].getElementsByTagName("TD")[1];
+
+//             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+
+//                 shouldSwitch = true;
+//                 break;
+//             }
+//         }
+
+//         if (shouldSwitch) {
+
+//             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+//             switching = true;
+//         }
+//     }
+// }
+
+const table = document.querySelector(".books-table table");
+const tbody = table.querySelector("tbody");
+
+function sortBooks() {
+    const rows = Array.from(tbody.rows);
+
+    const selectedSortOption = document.querySelector("select#sort").value;
+
+    let sortIndex;
+
+    switch (selectedSortOption) {
+        case "title":
+            sortIndex = 1;
+            break;
+        case "author":
+            sortIndex = 2;
+            break;
+        case "publisher":
+            sortIndex = 6;
+            break;
+        default:
+            break;
+    };
+
+    const sortedArray = rows.sort(function (a, b) {
+        const title1 = a.cells[sortIndex].textContent;
+        const title2 = b.cells[sortIndex].textContent;
+
+        if (title1 < title2) {
+            return -1;
+        }
+
+        if (title1 > title2) {
+            return 1;
+        }
+
+        return 0;
+    });
+
+    tbody.innerHTML = '';
+
+    sortedArray.forEach(el => {
+        tbody.appendChild(el);
+    });
+}
+
+for (const book of books1) {
+    addTableRow(book);
 }

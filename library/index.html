@@ -60,10 +60,7 @@
                     <label>Published by:
                         <input name="book_publisher" type="text" value="Little, Brown and Company">
                     </label>
-                    <div>
-                        <button type="button">Cancel</button>
                         <button class="add-to-table" type="button">Submit</button>
-                    </div>
                 </form>
             </div>
             <div class="overlay hidden"></div>
@@ -71,17 +68,13 @@
             <div class="search">
                 <div>
                     <label>Sort by:
-                        <select>
-                            <option value="value1">ID</option>
-                            <option value="value2">Title</option>
-                            <option value="value3">Author</option>
-                            <option value="value4">Publish date</option>
-                            <option value="value5">Number of pages</option>
-                            <option value="value6">Quantity</option>
-                            <option value="value7">Published by</option>
+                        <select id="sort">
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="publisher">Published by</option>
                         </select>
                     </label>
-                    <button>Sort</button>
+                    <button class="sort-select">Sort</button>
                 </div>
                 <div>
                     <label>Find a book:
