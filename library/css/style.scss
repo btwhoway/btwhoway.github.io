@@ -37,7 +37,8 @@ $titles: rgb(14, 135, 148);
         border-collapse: collapse;
         width          : 100%;
 
-        th, td {
+        th,
+        td {
             border : 2px solid grey;
             padding: 0.5rem;
         }
@@ -101,7 +102,7 @@ hr {
         display        : flex;
         justify-content: space-between;
         align-items    : center;
-        font-weight: bold;
+        font-weight    : bold;
 
         .modal-title {
             margin-left: 8rem;
@@ -110,8 +111,8 @@ hr {
         }
 
         .modalX {
-            padding: 7px 7px 3px;
-            border: 1px solid grey;
+            padding      : 7px 7px 3px;
+            border       : 1px solid grey;
             border-radius: 20px;
         }
     }
@@ -151,7 +152,7 @@ hr {
     z-index        : 1;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -170,7 +171,12 @@ hr {
 
 .books-table {
     @include basic-table;
+
+    :nth-child(8) {
+        background-color: rgb(229, 249, 233);
+    }
 }
+
 
 .visitors-table {
     @include basic-table;

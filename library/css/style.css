@@ -195,9 +195,14 @@ hr {
   width: 100%;
 }
 
-.books-table table th, .books-table table td {
+.books-table table th,
+.books-table table td {
   border: 2px solid grey;
   padding: 0.5rem;
+}
+
+.books-table :nth-child(8) {
+  background-color: #e5f9e9;
 }
 
 .visitors-table {
@@ -209,7 +214,8 @@ hr {
   width: 100%;
 }
 
-.visitors-table table th, .visitors-table table td {
+.visitors-table table th,
+.visitors-table table td {
   border: 2px solid grey;
   padding: 0.5rem;
 }
@@ -223,7 +229,8 @@ hr {
   width: 100%;
 }
 
-.cards-table table th, .cards-table table td {
+.cards-table table th,
+.cards-table table td {
   border: 2px solid grey;
   padding: 0.5rem;
 }
