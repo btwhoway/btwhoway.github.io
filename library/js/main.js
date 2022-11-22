@@ -58,10 +58,11 @@ function highlightNavTab(sectionName) {
     const tab = document.getElementById(sectionName);
 
     topNavigation.querySelectorAll("ul > li").forEach(function (el) {
-        el.style.borderBottom = "none";
+        el.classList.remove("highlited-li");
+        //el.style.borderBottom = "none";
     });
-
-    tab.style.borderBottom = "2px solid rgb(88 202 215)";
+    tab.classList.add("highlited-li");
+    //tab.style.borderBottom = "2px solid rgb(88 202 215)";
 }
 
 function showSection(sectionName) {

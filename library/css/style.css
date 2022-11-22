@@ -10,6 +10,10 @@ body {
   background-color: #f1edf3;
 }
 
+.highlited-li {
+  border-bottom: 2px solid #58cad7;
+}
+
 h1 {
   padding: 0.5em 1em;
   color: #0e8794;

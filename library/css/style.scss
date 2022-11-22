@@ -12,6 +12,10 @@ body {
 
 $titles: rgb(14, 135, 148);
 
+.highlited-li {
+    border-bottom: 2px solid rgb(88, 202, 215);
+}
+
 @mixin button-input {
     padding      : 0.6em 1.5em;
     border-radius: 5px;
