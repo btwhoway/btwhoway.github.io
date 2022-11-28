@@ -82,6 +82,9 @@ let overlay = document.querySelector(".overlay");
 document.querySelector("#add-book-button").addEventListener("click", modalOpen)
 
 function modalOpen() {
+    document.querySelector(".add-to-table").style.color = "unset";
+    document.querySelector(".add-to-table").classList.remove("red");
+
     overlay.classList.remove("hidden");
     addBookModal.classList.remove("hidden");
 }
@@ -123,8 +126,7 @@ function submitForm(event) {
         console.log(year)
 
         if (+bookData["book_published"] <= 0 || +bookData["book_published"] > year || +bookData["book_pages"] <= 0 || +bookData["book_quantity"] <= 0) {
-            document.querySelector(".add-to-table").style.color = "red";
-            document.querySelector(".add-to-table").style.border = "2px solid red";
+            document.querySelector(".add-to-table").classList.add("red");
 
             return;
         }
@@ -152,10 +154,18 @@ function addTableRow(bookData) {
 
     td = document.createElement("td");
     td.innerHTML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 50 50" height="30px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polyline fill="none" points="  42.948,12.532 10.489,44.99 3,47 5.009,39.511 37.468,7.052 " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path d="M45.749,11.134c-0.005,0.004,0.824-0.825,0.824-0.825c1.901-1.901,1.901-4.983,0.002-6.883c-1.903-1.902-4.984-1.9-6.885,0  c0,0-0.83,0.83-0.825,0.825L45.749,11.134z"/><polygon points="5.191,39.328 10.672,44.809 3.474,46.526 "/></svg>`
+    td.addEventListener("click", editBook)
     tr.appendChild(td);
 
     tbody.appendChild(tr);
     modalClose();
+}
+
+//document.querySelectorAll("tbody:nth-child(8)").addEventListener("click", editBook);
+
+function editBook(){
+    console.log("success");
+    modalOpen();
 }
 
 let sortButton = document.querySelector(".sort-select");

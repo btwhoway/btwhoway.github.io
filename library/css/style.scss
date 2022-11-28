@@ -127,6 +127,12 @@ hr {
         label {
             margin: 1em 0;
         }
+
+        .red {
+            color: red;
+            border: 2px solid red;
+
+        }
     }
 
     input {
@@ -171,10 +177,6 @@ hr {
 
 .books-table {
     @include basic-table;
-
-    :nth-child(8) {
-        background-color: rgb(229, 249, 233);
-    }
 }
 
 

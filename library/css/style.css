@@ -128,6 +128,11 @@ hr {
   margin: 1em 0;
 }
 
+.add-book form .red {
+  color: red;
+  border: 2px solid red;
+}
+
 .add-book input {
   padding: 0.6em 1.5em;
   border-radius: 5px;
@@ -199,10 +204,6 @@ hr {
 .books-table table td {
   border: 2px solid grey;
   padding: 0.5rem;
-}
-
-.books-table :nth-child(8) {
-  background-color: #e5f9e9;
 }
 
 .visitors-table {
