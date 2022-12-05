@@ -161,6 +161,12 @@ function addTableRow(bookData) {
     td.addEventListener("click", () => {
         editingRow = tr;
         editBook(bookData);
+        let deleteBtn = document.querySelector(".delete-book");
+        deleteBtn.hidden = false;
+        deleteBtn.addEventListener("click", function () {
+            editingRow.remove();
+            modalClose();
+        });
     });
     tr.appendChild(td);
 
@@ -170,7 +176,7 @@ function addTableRow(bookData) {
     modalClose();
 
     if (isEditing === true) {
-        editingRow.remove()
+        editingRow.remove();
     }
 }
 
@@ -288,8 +294,8 @@ function searchTable() {
 }
 
 function editBook(rowData) {
-    console.log(rowData, editingRow);
     isEditing = true;
+   
     let bookTitle = document.querySelector("form input[name='book_title']");
     let bookAuthor = document.querySelector("form input[name='book_author']");
     let bookPublished = document.querySelector("form input[name='book_published']");
@@ -297,6 +303,7 @@ function editBook(rowData) {
     let bookQuantity = document.querySelector("form input[name='book_quantity']");
     let bookPublisher = document.querySelector("form input[name='book_publisher']");
     modalOpen();
+
     bookTitle.value = rowData.book_title;
     bookAuthor.value = rowData.book_author;
     bookPublished.value = rowData.book_published;
@@ -305,3 +312,4 @@ function editBook(rowData) {
     bookPublisher.value = rowData.book_publisher;
 
 }
+
