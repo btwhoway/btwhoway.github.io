@@ -41,6 +41,9 @@ const books1 = [
     },
 ];
 
+let isEditing = false;
+let editingRow = null;
+
 const topNavigation = document.getElementById("top-navigation");
 
 topNavigation.addEventListener("click", function (event) {
@@ -79,7 +82,7 @@ const form = document.querySelector(".add-book form");
 let addBookModal = document.querySelector(".add-book");
 let overlay = document.querySelector(".overlay");
 
-document.querySelector("#add-book-button").addEventListener("click", modalOpen)
+document.querySelector("#add-book-button").addEventListener("click", () => { isEditing = false; modalOpen() })
 
 function modalOpen() {
     document.querySelector(".add-to-table").style.color = "unset";
@@ -155,20 +158,20 @@ function addTableRow(bookData) {
     td = document.createElement("td");
     td.innerHTML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 50 50" height="30px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polyline fill="none" points="  42.948,12.532 10.489,44.99 3,47 5.009,39.511 37.468,7.052 " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path d="M45.749,11.134c-0.005,0.004,0.824-0.825,0.824-0.825c1.901-1.901,1.901-4.983,0.002-6.883c-1.903-1.902-4.984-1.9-6.885,0  c0,0-0.83,0.83-0.825,0.825L45.749,11.134z"/><polygon points="5.191,39.328 10.672,44.809 3.474,46.526 "/></svg>`
     td.classList.add("edit-book-btn");
-    //td.addEventListener("click", editBook);
+    td.addEventListener("click", () => {
+        editingRow = tr;
+        editBook(bookData);
+    });
     tr.appendChild(td);
 
     tr._data = bookData;
 
     tbody.appendChild(tr);
     modalClose();
-}
 
-//document.querySelectorAll("tbody:nth-child(8)").addEventListener("click", editBook);
-
-function editBook() {
-    console.log("success");
-    modalOpen();
+    if (isEditing === true) {
+        editingRow.remove()
+    }
 }
 
 let sortButton = document.querySelector(".sort-select");
@@ -284,23 +287,21 @@ function searchTable() {
     }
 }
 
-const editBtns = document.querySelectorAll(".edit-book-btn");
-console.log(editBtns);
+function editBook(rowData) {
+    console.log(rowData, editingRow);
+    isEditing = true;
+    let bookTitle = document.querySelector("form input[name='book_title']");
+    let bookAuthor = document.querySelector("form input[name='book_author']");
+    let bookPublished = document.querySelector("form input[name='book_published']");
+    let bookPages = document.querySelector("form input[name='book_pages']");
+    let bookQuantity = document.querySelector("form input[name='book_quantity']");
+    let bookPublisher = document.querySelector("form input[name='book_publisher']");
+    modalOpen();
+    bookTitle.value = rowData.book_title;
+    bookAuthor.value = rowData.book_author;
+    bookPublished.value = rowData.book_published;
+    bookPages.value = rowData.book_pages;
+    bookQuantity.value = rowData.book_quantity;
+    bookPublisher.value = rowData.book_publisher;
 
-editBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (event) {
-
-        const target = event.currentTarget;
-        if (target.tagName !== "TD" && target.tagName !== "SVG") {
-            return;
-        }
-
-        const row = target.closest("tr");
-
-        console.log(row._data)
-
-        // editBook();
-    });
-})
-
-
+}
