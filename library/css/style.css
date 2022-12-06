@@ -74,7 +74,10 @@ hr {
 .add-book,
 .add-visitor {
   position: absolute;
-  left: 25%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 2;
   background-color: #c3d6e1;
   border: 0.5px solid grey;
@@ -99,7 +102,7 @@ hr {
 
 .add-book .modal-header .modal-title,
 .add-visitor .modal-header .modal-title {
-  margin-left: 8rem;
+  width: 100%;
   font-size: 1.4em;
   text-align: center;
 }

@@ -91,7 +91,9 @@ hr {
 .add-book,
 .add-visitor {
     position        : absolute;
-    left            : 25%;
+    left            : 50%;
+    top             : 50%;
+    transform       : translate(-50%, -50%);
     z-index         : 2;
     background-color: rgb(195, 214, 225);
     border          : 0.5px solid grey;
@@ -106,9 +108,9 @@ hr {
         font-weight    : bold;
 
         .modal-title {
-            margin-left: 8rem;
-            font-size  : 1.4em;
-            text-align : center;
+            width     : 100%;
+            font-size : 1.4em;
+            text-align: center;
         }
 
         .modalX {
@@ -192,10 +194,11 @@ hr {
 .add-visitor {
     padding: 3.5em 4em;
 
-    .modal-header .modal-title{
+    .modal-header .modal-title {
         margin-left: 0rem;
-        font-size: 1.3em;
+        font-size  : 1.3em;
     }
+
     form {
         align-items    : flex-start;
         align-content  : space-between;
