@@ -88,7 +88,8 @@ hr {
     }
 }
 
-.add-book {
+.add-book,
+.add-visitor {
     position        : absolute;
     left            : 25%;
     z-index         : 2;
@@ -129,7 +130,7 @@ hr {
         }
 
         .red {
-            color: red;
+            color : red;
             border: 2px solid red;
 
         }
@@ -182,6 +183,36 @@ hr {
 
 .visitors-table {
     @include basic-table;
+
+    .edit-visitor-btn {
+        text-align: center;
+    }
+}
+
+.add-visitor {
+    padding: 3.5em 4em;
+
+    .modal-header .modal-title{
+        margin-left: 0rem;
+        font-size: 1.3em;
+    }
+    form {
+        align-items    : flex-start;
+        align-content  : space-between;
+        justify-content: center;
+
+        label {
+            margin: 1em 0 0;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        :last-child {
+            margin-top: 1em;
+        }
+    }
 }
 
 .cards-table {

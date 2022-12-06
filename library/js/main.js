@@ -76,6 +76,9 @@ function showSection(sectionName) {
     section.hidden = false;
 }
 
+
+
+
 //books
 const form = document.querySelector(".add-book form");
 
