@@ -95,9 +95,9 @@ function modalOpen() {
     addBookModal.classList.remove("hidden");
 }
 
-document.querySelector(".modalX").addEventListener("click", modalClose)
+document.querySelector(".modalX").addEventListener("click", visitorsModalClose);
 
-function modalClose() {
+function visitorsModalClose() {
     form.reset();
     overlay.classList.add("hidden");
     addBookModal.classList.add("hidden");
@@ -105,11 +105,11 @@ function modalClose() {
 
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !addBookModal.classList.contains("hidden")) {
-        modalClose();
+        visitorsModalClose();
     }
 });
 
-document.querySelector(".add-to-table").addEventListener("click", submitForm)
+document.querySelector(".add-to-table").addEventListener("click", submitForm);
 
 function submitForm(event) {
     event.preventDefault();
@@ -168,7 +168,7 @@ function addTableRow(bookData) {
         deleteBtn.hidden = false;
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
-            modalClose();
+            visitorsModalClose();
         });
     });
     tr.appendChild(td);
@@ -176,7 +176,7 @@ function addTableRow(bookData) {
     tr._data = bookData;
 
     tbody.appendChild(tr);
-    modalClose();
+    visitorsModalClose();
 
     if (isEditing === true) {
         editingRow.remove();
