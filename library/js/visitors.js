@@ -81,8 +81,6 @@ function addVisitorModal() {
     console.log("working")
 }
 
-
-
 function editVisitorModal() {
     
     addVisitorModal();
@@ -117,16 +115,20 @@ function submitVisitorsForm(event) {
         console.log(value);
         if (value === "" || value === " ") {
             submitVisitorBtn.style.color = "red";
-
             return;
         }
 
         if (+visitorData["id"] <= 0 || +visitorData["phone"].length > 12 || +visitorData["phone"].length < 12) {
             submitVisitorBtn.classList.add("red");
-
             return;
         }
     }
     createTableRow(visitorData);
 }
 
+let sortBtn = document.querySelector(".sort-visitor");
+sortBtn.addEventListener("click", sortVisitors);
+
+function sortVisitors(){
+    
+}

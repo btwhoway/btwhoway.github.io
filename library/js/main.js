@@ -95,9 +95,9 @@ function modalOpen() {
     addBookModal.classList.remove("hidden");
 }
 
-document.querySelector(".modalX").addEventListener("click", visitorsModalClose);
+document.querySelector(".modalX").addEventListener("click", booksModalClose);
 
-function visitorsModalClose() {
+function booksModalClose() {
     form.reset();
     overlay.classList.add("hidden");
     addBookModal.classList.add("hidden");
@@ -105,7 +105,7 @@ function visitorsModalClose() {
 
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !addBookModal.classList.contains("hidden")) {
-        visitorsModalClose();
+        booksModalClose();
     }
 });
 
@@ -168,7 +168,7 @@ function addTableRow(bookData) {
         deleteBtn.hidden = false;
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
-            visitorsModalClose();
+            booksModalClose();
         });
     });
     tr.appendChild(td);
@@ -176,7 +176,7 @@ function addTableRow(bookData) {
     tr._data = bookData;
 
     tbody.appendChild(tr);
-    visitorsModalClose();
+    booksModalClose();
 
     if (isEditing === true) {
         editingRow.remove();
