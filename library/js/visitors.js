@@ -101,6 +101,8 @@ const submitVisitorBtn = document.querySelector(".add-visitor .add-to-table");
 submitVisitorBtn.addEventListener("click", submitVisitorsForm);
 
 function submitVisitorsForm(event) {
+    submitVisitorBtn.classList.remove("red");
+
     let form = document.querySelector(".add-visitor form");
 
     event.preventDefault();
@@ -128,7 +130,44 @@ function submitVisitorsForm(event) {
 
 let sortBtn = document.querySelector(".sort-visitor");
 sortBtn.addEventListener("click", sortVisitors);
+const visitorsTbody = document.querySelector(".visitors-tbody")
 
 function sortVisitors(){
-    
+    const rows = Array.from(visitorsTbody.rows);
+
+    const selectedSortOption = document.querySelector("select#sort-visitors").value;
+
+    let sortIndex;
+
+    switch (selectedSortOption) {
+        case "name":
+            sortIndex = 1;
+            break;
+        case "phone":
+            sortIndex = 2;
+            break;
+        default:
+            break;
+    };
+
+    const sortedVisitors = rows.sort(function (a, b) {
+        const title1 = a.cells[sortIndex].textContent;
+        const title2 = b.cells[sortIndex].textContent;
+
+        if (title1 < title2) {
+            return -1;
+        }
+
+        if (title1 > title2) {
+            return 1;
+        }
+
+        return 0;
+    });
+
+    visitorsTbody.innerHTML = '';
+
+    sortedVisitors.forEach(el => {
+        visitorsTbody.appendChild(el);
+    });
 }
