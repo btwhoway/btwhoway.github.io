@@ -171,3 +171,28 @@ function sortVisitors(){
         visitorsTbody.appendChild(el);
     });
 }
+
+document.getElementById("search-visitors").addEventListener("click", searchVisitors);
+
+let visitorsInput = document.querySelector("#search-visitor-input");
+visitorsInput.addEventListener("input", searchVisitors);
+
+function searchVisitors() {
+    let filter = visitorsInput.value.toLowerCase();
+    let rows = visitorsTbody.rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        let tds = rows[i].getElementsByTagName("TD");
+
+        for (let j = 1; j < tds.length; j++) {
+            let txtValue = tds[j].textContent;
+
+            rows[i].hidden = true;
+
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                rows[i].hidden = false;
+                break;
+            }
+        }
+    }
+}
