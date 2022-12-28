@@ -283,4 +283,10 @@ hr {
   border: 2px solid grey;
   padding: 0.5rem;
 }
+
+.stats-box .bigtxt {
+  font-size: 30px;
+  font-weight: lighter;
+  padding: 2rem;
+}
 /*# sourceMappingURL=style.css.map */
