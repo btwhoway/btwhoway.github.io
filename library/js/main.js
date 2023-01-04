@@ -1,5 +1,7 @@
-const booksObj = [
+/*
+let booksArray = [
     {
+        "book_id": "1",
         "book_title": "Twilight",
         "book_author": "Stephanie Meyer",
         "book_published": "2005",
@@ -8,6 +10,7 @@ const booksObj = [
         "book_publisher": "Little, Brown and Company"
     },
     {
+        "book_id": "2",
         "book_title": "New moon",
         "book_author": "Stephanie Meyer",
         "book_published": "2006",
@@ -16,6 +19,7 @@ const booksObj = [
         "book_publisher": "Little, Brown and Company"
     },
     {
+        "book_id": "3",
         "book_title": "Eclipse",
         "book_author": "Stephanie Meyer",
         "book_published": "2007",
@@ -24,6 +28,7 @@ const booksObj = [
         "book_publisher": "Little, Brown and Company"
     },
     {
+        "book_id": "4",
         "book_title": "Breaking dawn",
         "book_author": "Stephanie Meyer",
         "book_published": "2008",
@@ -32,6 +37,7 @@ const booksObj = [
         "book_publisher": "Little, Brown and Company"
     },
     {
+        "book_id": "5",
         "book_title": "Interview with the vampire",
         "book_author": "Anne Rice",
         "book_published": "1976",
@@ -40,11 +46,38 @@ const booksObj = [
         "book_publisher": "Knopf"
     },
 ];
+*/
 
-localStorage.setItem("booksObject", JSON.stringify(booksObj));
-const localItemsBooks = JSON.parse(localStorage.getItem('booksObject'));
-console.log(localItemsBooks[0].book_author);
+let booksArray = [];
 
+// localStorage.setItem("booksArray", JSON.stringify(booksArray));
+booksArray = JSON.parse(localStorage.getItem('booksArray'));
+
+// let somearr =
+// {
+//     "book_title": "some book",
+//     "book_author": "Stephanie Meyer",
+//     "book_published": "2005",
+//     "book_pages": "300",
+//     "book_quantity": "1",
+//     "book_publisher": "Little, Brown and Company"
+// };
+
+// localStorage.setItem('somearr', JSON.stringify(somearr));
+
+// localBooksObj.push(somearr);
+
+// localStorage.setItem("booksArray", JSON.stringify(localBooksObj));
+
+// let result = JSON.parse(localStorage.getItem('booksArray'));
+
+function saveObjToLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+function saveBooksArray() {
+    saveObjToLocalStorage("booksArray", booksArray);
+}
 
 let isEditing = false;
 let editingRow = null;
@@ -114,9 +147,6 @@ document.addEventListener("keydown", function (e) {
 document.querySelector(".add-to-table").addEventListener("click", submitForm);
 
 function submitForm(event) {
-
-
-    //додати в об*єкт дані з форми а потім записати в локал?
     event.preventDefault();
 
     const formData = new FormData(form);
@@ -125,6 +155,7 @@ function submitForm(event) {
     console.log(bookData);
 
     for (let data in bookData) {
+
         let value = bookData[data];
         console.log(value);
         if (value === "" || value === " ") {
@@ -142,6 +173,12 @@ function submitForm(event) {
             return;
         }
     }
+
+    bookData["book_id"] = String(booksArray.length + 1);
+
+    booksArray.push(bookData);
+    saveBooksArray();
+
     addTableRow(bookData);
 }
 
@@ -150,14 +187,15 @@ function addTableRow(bookData) {
     let tr = document.createElement("tr");
     let td = document.createElement("td");
 
-    let rowsCount = document.querySelectorAll("tbody tr");
-    td.textContent = rowsCount.length + 1;
+    td.textContent = bookData["book_id"];
     tr.appendChild(td);
 
-    for (let data in bookData) {
-
+    for (let key in bookData) {
+        if (key === "book_id") {
+            continue;
+        }
         let td = document.createElement("td");
-        td.textContent = bookData[data];
+        td.textContent = bookData[key];
         td.style.textTransform = "capitalize";
 
         tr.appendChild(td);
@@ -167,14 +205,21 @@ function addTableRow(bookData) {
     td.innerHTML = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 50 50" height="30px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polyline fill="none" points="  42.948,12.532 10.489,44.99 3,47 5.009,39.511 37.468,7.052 " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path d="M45.749,11.134c-0.005,0.004,0.824-0.825,0.824-0.825c1.901-1.901,1.901-4.983,0.002-6.883c-1.903-1.902-4.984-1.9-6.885,0  c0,0-0.83,0.83-0.825,0.825L45.749,11.134z"/><polygon points="5.191,39.328 10.672,44.809 3.474,46.526 "/></svg>`
     td.classList.add("edit-book-btn");
     td.addEventListener("click", () => {
+
+
         editingRow = tr;
         editBook(bookData);
+
         let deleteBtn = document.querySelector(".delete-book");
         deleteBtn.hidden = false;
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
             booksModalClose();
+
+            booksArray.splice( (+bookData["book_id"]-1), 1);
+            localStorage.setItem('booksArray',JSON.stringify(booksArray));
         });
+
     });
     tr.appendChild(td);
 
@@ -272,7 +317,7 @@ function sortBooks() {
     });
 }
 
-for (const book of booksObj) {
+for (const book of booksArray) {
     addTableRow(book);
 }
 
@@ -303,7 +348,7 @@ function searchTable() {
 
 function editBook(rowData) {
     isEditing = true;
-   
+
     let bookTitle = document.querySelector("form input[name='book_title']");
     let bookAuthor = document.querySelector("form input[name='book_author']");
     let bookPublished = document.querySelector("form input[name='book_published']");

@@ -28,7 +28,7 @@ const visitorsObj = [
 
 localStorage.setItem("visitorsObject", JSON.stringify(visitorsObj));
 const localItemsVisitors = JSON.parse(localStorage.getItem('visitorsObject'));
-console.log(localItemsVisitors[0].name);
+//console.log(localItemsVisitors[0].name);
 
 function createTableRow(visitor) {
     let tbody = document.querySelector("tbody.visitors-tbody");
