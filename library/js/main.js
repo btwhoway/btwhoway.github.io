@@ -1,4 +1,4 @@
-const books1 = [
+const booksObj = [
     {
         "book_title": "Twilight",
         "book_author": "Stephanie Meyer",
@@ -41,6 +41,11 @@ const books1 = [
     },
 ];
 
+localStorage.setItem("booksObject", JSON.stringify(booksObj));
+const localItemsBooks = JSON.parse(localStorage.getItem('booksObject'));
+console.log(localItemsBooks[0].book_author);
+
+
 let isEditing = false;
 let editingRow = null;
 
@@ -76,9 +81,6 @@ function showSection(sectionName) {
     section.hidden = false;
 }
 
-
-
-
 //books
 const form = document.querySelector(".add-book form");
 
@@ -112,6 +114,9 @@ document.addEventListener("keydown", function (e) {
 document.querySelector(".add-to-table").addEventListener("click", submitForm);
 
 function submitForm(event) {
+
+
+    //додати в об*єкт дані з форми а потім записати в локал?
     event.preventDefault();
 
     const formData = new FormData(form);
@@ -267,7 +272,7 @@ function sortBooks() {
     });
 }
 
-for (const book of books1) {
+for (const book of booksObj) {
     addTableRow(book);
 }
 

@@ -196,23 +196,46 @@
                 <p>All cards:</p>
                 <button>New card</button>
             </div>
+            <div class="add-card hidden">
+                <div class="modal-header">
+                    <p class="modal-title">New card</p>
+                    <p class="modalX">
+                        <?xml version="1.0" ?><svg fill="none" height="16" viewBox="0 0 16 16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M5.17157 8.00003L0.585785 3.41424L3.41421 0.585815L8 5.1716L12.5858 0.585815L15.4142 3.41424L10.8284 8.00003L15.4142 12.5858L12.5858 15.4142L8 10.8285L3.41421 15.4142L0.585785 12.5858L5.17157 8.00003Z"
+                                fill="#030708" fill-rule="evenodd" />
+                        </svg>
+                    </p>
+                </div>
+                <form>
+                    <label>Visitor:
+                    </label>
+                    <input name="id" type="text" required>
+
+                    <label>Book:
+                    </label>
+                    <input name="name" type="text" required>
+                    <div>
+
+                        <button class="add-to-table" type="button">Submit</button>
+                    </div>
+                </form>
+            </div>
             <hr>
             <div class="search">
                 <div>
                     <label>Sort by:
-                        <select>
-                            <option value="value1">ID</option>
-                            <option value="value1">Visitor</option>
-                            <option value="value2">Book</option>
-                            <option value="value3">Borrow Date</option>
-                            <option value="value3">Return Date</option>
+                        <select id="sort-cards">
+                            <option value="borrow">Borrow Date</option>
+                            <option value="return">Return Date</option>
                         </select>
                     </label>
                     <button>Sort</button>
                 </div>
                 <div>
                     <label>Search:
-                        <input type="text">
+                        <input type="search" placeholder="Enter here" id="search-card-input">
                     </label>
                     <button>Search</button>
                 </div>
