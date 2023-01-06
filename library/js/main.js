@@ -80,6 +80,7 @@ function saveBooksArray() {
 }
 
 let isEditing = false;
+let editingObject = null;
 let editingRow = null;
 
 const topNavigation = document.getElementById("top-navigation");
@@ -120,7 +121,7 @@ const form = document.querySelector(".add-book form");
 let addBookModal = document.querySelector(".add-book");
 let overlay = document.querySelector(".overlay");
 
-document.querySelector("#add-book-button").addEventListener("click", () => { isEditing = false; modalOpen() })
+document.querySelector("#add-book-button").addEventListener("click", () => { isEditing = false; editingObject = null; modalOpen() })
 
 function modalOpen() {
     document.querySelector(".add-to-table").style.color = "unset";
@@ -151,7 +152,7 @@ function submitForm(event) {
 
     const formData = new FormData(form);
 
-    const bookData = Object.fromEntries(formData.entries());
+    let bookData = Object.fromEntries(formData.entries());
     console.log(bookData);
 
     for (let data in bookData) {
@@ -174,9 +175,20 @@ function submitForm(event) {
         }
     }
 
-    bookData["book_id"] = String(booksArray.length + 1);
+    if (isEditing) {
+        const editingBookId = editingObject.book_id;
 
-    booksArray.push(bookData);
+        const bookIndex = booksArray.findIndex((b) => b.book_id === editingBookId);
+
+        if (bookIndex !== -1) {
+            booksArray[bookIndex] = { ...booksArray[bookIndex], ...bookData };
+            bookData = booksArray[bookIndex];
+        }
+    } else {
+        bookData["book_id"] = String(booksArray.length + 1);
+        booksArray.push(bookData);
+    }
+
     saveBooksArray();
 
     addTableRow(bookData);
@@ -216,8 +228,8 @@ function addTableRow(bookData) {
             editingRow.remove();
             booksModalClose();
 
-            booksArray.splice( (+bookData["book_id"]-1), 1);
-            localStorage.setItem('booksArray',JSON.stringify(booksArray));
+            booksArray.splice((+bookData["book_id"] - 1), 1);
+            saveBooksArray();
         });
 
     });
@@ -346,8 +358,9 @@ function searchTable() {
     }
 }
 
-function editBook(rowData) {
+function editBook(bookData) {
     isEditing = true;
+    editingObject = bookData;
 
     let bookTitle = document.querySelector("form input[name='book_title']");
     let bookAuthor = document.querySelector("form input[name='book_author']");
@@ -357,12 +370,12 @@ function editBook(rowData) {
     let bookPublisher = document.querySelector("form input[name='book_publisher']");
     modalOpen();
 
-    bookTitle.value = rowData.book_title;
-    bookAuthor.value = rowData.book_author;
-    bookPublished.value = rowData.book_published;
-    bookPages.value = rowData.book_pages;
-    bookQuantity.value = rowData.book_quantity;
-    bookPublisher.value = rowData.book_publisher;
+    bookTitle.value = bookData.book_title;
+    bookAuthor.value = bookData.book_author;
+    bookPublished.value = bookData.book_published;
+    bookPages.value = bookData.book_pages;
+    bookQuantity.value = bookData.book_quantity;
+    bookPublisher.value = bookData.book_publisher;
 
 }
 
