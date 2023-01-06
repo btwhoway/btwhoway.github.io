@@ -194,7 +194,7 @@
 
             <div class="addings">
                 <p>All cards:</p>
-                <button>New card</button>
+                <button id="add-new-card">New card</button>
             </div>
             <div class="add-card hidden">
                 <div class="modal-header">
@@ -211,11 +211,16 @@
                 <form>
                     <label>Visitor:
                     </label>
-                    <input name="id" type="text" required>
+                    <select name="visitor" id="visitor-name">
+
+                    </select>
 
                     <label>Book:
                     </label>
-                    <input name="name" type="text" required>
+                    <select name="book" id="book-name">
+
+                    </select>
+                    
                     <div>
 
                         <button class="add-to-table" type="button">Submit</button>
@@ -272,12 +277,10 @@
 
    
 
-
-
-
-
     <script src="js/main.js"></script>
     <script src="js/visitors.js"></script>
+    <script src="js/cards.js"></script>
+
 
 </body>
 

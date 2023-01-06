@@ -89,12 +89,13 @@ hr {
 }
 
 .add-book,
-.add-visitor {
+.add-visitor,
+.add-card {
     position        : absolute;
     left            : 50%;
     top             : 50%;
     transform       : translate(-50%, -50%);
-    z-index         : 2;
+    z-index         : 100;
     background-color: rgb(195, 214, 225);
     border          : 0.5px solid grey;
     border-radius   : 5px;
@@ -191,7 +192,7 @@ hr {
     }
 }
 
-.add-visitor {
+.add-visitor, .add-card {
     padding: 3.5em 4em;
 
     .modal-header .modal-title {
@@ -222,10 +223,15 @@ hr {
     @include basic-table;
 }
 
+
+
+
+
+
 .stats-box {
-    .bigtxt{
-        font-size: 30px;
+    .bigtxt {
+        font-size  : 30px;
         font-weight: lighter;
-        padding: 2rem;
+        padding    : 2rem;
     }
 }

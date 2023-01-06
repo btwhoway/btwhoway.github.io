@@ -72,13 +72,14 @@ hr {
 }
 
 .add-book,
-.add-visitor {
+.add-visitor,
+.add-card {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 100;
   background-color: #c3d6e1;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -87,7 +88,8 @@ hr {
 }
 
 .add-book .modal-header,
-.add-visitor .modal-header {
+.add-visitor .modal-header,
+.add-card .modal-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,21 +103,24 @@ hr {
 }
 
 .add-book .modal-header .modal-title,
-.add-visitor .modal-header .modal-title {
+.add-visitor .modal-header .modal-title,
+.add-card .modal-header .modal-title {
   width: 100%;
   font-size: 1.4em;
   text-align: center;
 }
 
 .add-book .modal-header .modalX,
-.add-visitor .modal-header .modalX {
+.add-visitor .modal-header .modalX,
+.add-card .modal-header .modalX {
   padding: 7px 7px 3px;
   border: 1px solid grey;
   border-radius: 20px;
 }
 
 .add-book form,
-.add-visitor form {
+.add-visitor form,
+.add-card form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,25 +138,29 @@ hr {
 }
 
 .add-book form label,
-.add-visitor form label {
+.add-visitor form label,
+.add-card form label {
   margin: 1em 0;
 }
 
 .add-book form .red,
-.add-visitor form .red {
+.add-visitor form .red,
+.add-card form .red {
   color: red;
   border: 2px solid red;
 }
 
 .add-book input,
-.add-visitor input {
+.add-visitor input,
+.add-card input {
   padding: 0.6em 1.5em;
   border-radius: 5px;
   border: 0.1px solid grey;
 }
 
 .add-book button,
-.add-visitor button {
+.add-visitor button,
+.add-card button {
   padding: 0.6em 1.5em;
   border-radius: 5px;
   border: 0.1px solid grey;
@@ -237,16 +246,16 @@ hr {
   text-align: center;
 }
 
-.add-visitor {
+.add-visitor, .add-card {
   padding: 3.5em 4em;
 }
 
-.add-visitor .modal-header .modal-title {
+.add-visitor .modal-header .modal-title, .add-card .modal-header .modal-title {
   margin-left: 0rem;
   font-size: 1.3em;
 }
 
-.add-visitor form {
+.add-visitor form, .add-card form {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -257,15 +266,15 @@ hr {
           justify-content: center;
 }
 
-.add-visitor form label {
+.add-visitor form label, .add-card form label {
   margin: 1em 0 0;
 }
 
-.add-visitor form input {
+.add-visitor form input, .add-card form input {
   width: 100%;
 }
 
-.add-visitor form :last-child {
+.add-visitor form :last-child, .add-card form :last-child {
   margin-top: 1em;
 }
 

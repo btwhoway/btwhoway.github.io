@@ -1,4 +1,5 @@
-const visitorsObj = [
+/*
+let visitorsArray = [
     {
         "id": 1,
         "name": "John Snow",
@@ -25,10 +26,17 @@ const visitorsObj = [
         "phone": "380981575851",
     },
 ]
+*/
 
-localStorage.setItem("visitorsObject", JSON.stringify(visitorsObj));
-const localItemsVisitors = JSON.parse(localStorage.getItem('visitorsObject'));
+let visitorsArray = [];
+
+// localStorage.setItem("visitorsArray", JSON.stringify(visitorsArray));
+visitorsArray = JSON.parse(localStorage.getItem('visitorsArray'));
 //console.log(localItemsVisitors[0].name);
+
+function saveVisitorsArray() {
+    saveObjToLocalStorage("visitorsArray", visitorsArray);
+}
 
 function createTableRow(visitor) {
     let tbody = document.querySelector("tbody.visitors-tbody");
@@ -55,23 +63,24 @@ function createTableRow(visitor) {
         deleteBtn.hidden = false;
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
-            visitorsModalClose();
+            cardModalClose();
         });
     });
 
     tr.appendChild(td);
     tbody.appendChild(tr);
 
-    visitorsModalClose();
+    cardModalClose();
 }
 
 let addVisitorBtn = document.querySelector(".new-visitor");
 
 
 addVisitorBtn.addEventListener("click", addVisitorModal);
+
 let visitorsForm = document.querySelector(".add-visitor");
 
-for (const visitor of visitorsObj) {
+for (const visitor of visitorsArray) {
     createTableRow(visitor);
 }
 
@@ -88,10 +97,10 @@ function editVisitorModal() {
     addVisitorModal();
 }
 
-document.querySelector(".add-visitor .modalX").addEventListener("click", visitorsModalClose);
+document.querySelector(".add-visitor .modalX").addEventListener("click", cardModalClose);
 
 
-function visitorsModalClose() {
+function cardModalClose() {
     let overlay = document.querySelector(".overlay");
     let form = document.querySelector(".add-visitor form");
     form.reset();
