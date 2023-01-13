@@ -11,8 +11,8 @@ function addNewCard(){
     createNewCardOptions();
 }
 
-document.querySelector(".add-card .modalX").addEventListener("click", cardModalClose);
-function cardModalClose() {
+document.querySelector(".add-card .modalX").addEventListener("click", cardsModalClose);
+function cardsModalClose() {
     let overlay = document.querySelector(".overlay");
     let form = document.querySelector(".add-card form");
     form.reset();
@@ -44,7 +44,7 @@ function createNewCardOptions(){
         option.textContent = book["book_title"];
         selectBook.appendChild(option);
     });
-
-
 }
+
+
 

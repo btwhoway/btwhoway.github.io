@@ -29,25 +29,31 @@ let visitorsArray = [
 */
 
 let visitorsArray = [];
-
 // localStorage.setItem("visitorsArray", JSON.stringify(visitorsArray));
 visitorsArray = JSON.parse(localStorage.getItem('visitorsArray'));
-//console.log(localItemsVisitors[0].name);
+
 
 function saveVisitorsArray() {
     saveObjToLocalStorage("visitorsArray", visitorsArray);
 }
 
+let isEditingVisitor = false;
+let editingRowVisitor = null;
+
+let addVisitorBtn = document.querySelector(".new-visitor");
+let visitorsForm = document.querySelector(".add-visitor");
+
 function createTableRow(visitor) {
     let tbody = document.querySelector("tbody.visitors-tbody");
     let tr = document.createElement("tr");
+    let td = document.createElement("td");
+
 
     for (let data in visitor) {
         let td = document.createElement("td");
         td.textContent = visitor[data];
         td.style.textTransform = "capitalize";
         tr.appendChild(td);
-
     }
 
     td = document.createElement("td");
@@ -55,30 +61,55 @@ function createTableRow(visitor) {
     td.classList.add("edit-visitor-btn");
 
     td.addEventListener("click", () => {
-        editVisitorModal();
 
         editingRow = tr;
+        editVisitor(visitor);
 
         let deleteBtn = document.querySelector(".delete-visitor");
         deleteBtn.hidden = false;
+
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
-            cardModalClose();
+            visitorsModalClose();
+
+            let editingVisitorId = visitor.id;
+            console.log(visitor);
+            const visitorIndex = visitorsArray.findIndex((b) => b.id === editingVisitorId);
+            console.log(visitorIndex);
+
+            if (visitorIndex !== -1){
+                visitorsArray.splice(visitorIndex, 1);
+                saveVisitorsArray();
+            }
+            
         });
     });
 
     tr.appendChild(td);
+    tr._data = visitor;
     tbody.appendChild(tr);
 
-    cardModalClose();
+    if (isEditing === true) {
+        editingRow.remove();
+    }
 }
 
-let addVisitorBtn = document.querySelector(".new-visitor");
+function editVisitor(visitor) {
+    isEditing = true;
+    editingObject = visitor;
 
+    let visitorId = document.querySelector("form input[name='id']");
+    let visitorName = document.querySelector("form input[name='name']");
+    let visitorPhone = document.querySelector("form input[name='phone']");
+    addVisitorModal();
 
-addVisitorBtn.addEventListener("click", addVisitorModal);
+    visitorId.value = visitor.id;
+    visitorName.value = visitor.name;
+    visitorPhone.value = visitor.phone;
 
-let visitorsForm = document.querySelector(".add-visitor");
+}
+
+addVisitorBtn.addEventListener("click", () => { isEditing = false; editingObject = null; addVisitorModal() });
 
 for (const visitor of visitorsArray) {
     createTableRow(visitor);
@@ -89,26 +120,24 @@ function addVisitorModal() {
 
     overlay.classList.remove("hidden");
     visitorsForm.classList.remove("hidden");
-    console.log("working")
 }
 
 function editVisitorModal() {
-    
     addVisitorModal();
 }
 
-document.querySelector(".add-visitor .modalX").addEventListener("click", cardModalClose);
+document.querySelector(".add-visitor .modalX").addEventListener("click", visitorsModalClose);
 
-
-function cardModalClose() {
+function visitorsModalClose() {
     let overlay = document.querySelector(".overlay");
     let form = document.querySelector(".add-visitor form");
     form.reset();
     overlay.classList.add("hidden");
+
     visitorsForm.classList.add("hidden");
 }
 
-const submitVisitorBtn = document.querySelector(".add-visitor .add-to-table");
+let submitVisitorBtn = document.querySelector(".add-visitor .add-to-table");
 submitVisitorBtn.addEventListener("click", submitVisitorsForm);
 
 function submitVisitorsForm(event) {
@@ -128,25 +157,34 @@ function submitVisitorsForm(event) {
         console.log(value);
         if (value === "" || value === " ") {
             submitVisitorBtn.style.color = "red";
+
             return;
         }
 
         if (+visitorData["id"] <= 0 || +visitorData["phone"].length > 12 || +visitorData["phone"].length < 12) {
             submitVisitorBtn.classList.add("red");
+
             return;
         }
     }
+
+    visitorsArray.push(visitorData);
+
+    saveVisitorsArray();
+
     createTableRow(visitorData);
+
+    visitorsModalClose();
 }
 
 let sortBtn = document.querySelector(".sort-visitor");
 sortBtn.addEventListener("click", sortVisitors);
-const visitorsTbody = document.querySelector(".visitors-tbody")
+let visitorsTbody = document.querySelector(".visitors-tbody")
 
-function sortVisitors(){
-    const rows = Array.from(visitorsTbody.rows);
+function sortVisitors() {
+    let rows = Array.from(visitorsTbody.rows);
 
-    const selectedSortOption = document.querySelector("select#sort-visitors").value;
+    let selectedSortOption = document.querySelector("select#sort-visitors").value;
 
     let sortIndex;
 
@@ -161,7 +199,7 @@ function sortVisitors(){
             break;
     };
 
-    const sortedVisitors = rows.sort(function (a, b) {
+    let sortedVisitors = rows.sort(function (a, b) {
         const title1 = a.cells[sortIndex].textContent;
         const title2 = b.cells[sortIndex].textContent;
 
