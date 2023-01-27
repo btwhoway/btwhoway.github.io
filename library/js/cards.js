@@ -141,6 +141,31 @@ function createCardTable(cardInfo) {
     tbody.appendChild(tr);
 }
 
+document.getElementById("search-card").addEventListener("click", searchCards);
+
+let cardInput = document.querySelector("#search-card-input");
+cardInput.addEventListener("input", searchCards);
+
+function searchCards() {
+    let filter = cardInput.value.toLowerCase();
+    let rows = document.querySelector(".cards-table tbody").rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        let tds = rows[i].getElementsByTagName("TD");
+
+        for (let j = 1; j < tds.length; j++) {
+            let txtValue = tds[j].textContent;
+
+            rows[i].hidden = true;
+
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                rows[i].hidden = false;
+                break;
+            }
+        }
+    }
+}
+
 for (const cardInfo of cardsArray) {
     createCardTable(cardInfo);
 }
