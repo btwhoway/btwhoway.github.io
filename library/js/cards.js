@@ -4,6 +4,7 @@ let LSCardsArray = JSON.parse(localStorage.getItem('cardsArray'));
 if (LSCardsArray) {
     cardsArray = LSCardsArray;
 }
+
 function saveCardsArray() {
     saveObjToLocalStorage("cardsArray", cardsArray);
 }
@@ -12,6 +13,7 @@ let addCardBtn = document.querySelector("#add-new-card");
 
 addCardBtn.addEventListener("click", addNewCard);
 let cardsModal = document.querySelector(".add-card");
+
 function addNewCard() {
     let overlay = document.querySelector(".overlay");
 
@@ -36,7 +38,10 @@ let selectBook = document.getElementById('book-name');
 
 function createNewCardOptions() {
     let visitors = JSON.parse(localStorage.getItem('visitorsArray'));
-    console.log(visitors);
+
+    selectVisitor.innerHTML = "";
+
+    selectBook.innerHTML = "";
 
     visitors.forEach(vis => {
         let option = document.createElement('option');
@@ -46,7 +51,6 @@ function createNewCardOptions() {
     });
 
     let books = JSON.parse(localStorage.getItem('booksArray'));
-    console.log(books);
 
     books.forEach(book => {
         let option = document.createElement('option');
@@ -72,13 +76,16 @@ function submitNewCard(event) {
 
     for (let info in cardInfo) {
         let value = cardInfo[info];
-        console.log(value);
+
         if (value === "" || value === " ") {
             submitNewCardBtn.style.color = "red";
 
             return;
         }
     }
+
+    cardInfo.id = Math.floor(Math.random() * 1000000);
+    cardInfo.borrowDate = new Date();
 
     cardsArray.push(cardInfo);
 
@@ -89,31 +96,51 @@ function submitNewCard(event) {
     cardsModalClose();
 }
 
+
 function createCardTable(cardInfo) {
     let tbody = document.querySelector(".cards-table tbody");
     let tr = document.createElement("tr");
     let td = document.createElement("td");
 
-    td.textContent = Math.floor(Math.random() * 1000000);
+    td.textContent = cardInfo["id"];
     tr.appendChild(td);
-    for (let info in cardInfo) {
-        let td = document.createElement("td");
-        td.textContent = cardInfo[info];
-        td.style.textTransform = "capitalize";
-        tr.appendChild(td);
-    }
 
-    let borrowDate = new Date().toLocaleDateString();
+    td = document.createElement("td");
+    td.textContent = cardInfo["visitor"];
+    tr.appendChild(td);
 
+    td = document.createElement("td");
+    td.textContent = cardInfo["book"];
+    tr.appendChild(td);
+
+    let borrowDate = new Date(cardInfo["borrowDate"]).toLocaleString();
     td = document.createElement("td");
     td.textContent = borrowDate;
     tr.appendChild(td);
 
-    let returnDate = new Date().toLocaleDateString();
-
     td = document.createElement("td");
-    td.textContent = "return date";
+    td.classList.add("return-date-button");
+
+    if (!cardInfo["returnDate"]) {
+        td.innerHTML = `<?xml version="1.0" ?><svg id="return-arrival-date-calendar" style="enable-background:new 0 0 15 15.5;" version="1.1" viewBox="0 0 15 15.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,1.5V0h-1v1.5H4V0H3v1.5H0v6v8h15v-8v-6H12z M1,2.5h2V4h1V2.5h7V4h1V2.5h2v4H1V2.5z M14,14.5H1v-7h13V14.5z"/><polygon points="5.146,13.354 5.854,12.646 4.707,11.5 12.5,11.5 12.5,10.5 4.707,10.5 5.854,9.354 5.146,8.646 2.793,11 "/></svg>`;
+
+        td.addEventListener("click", () => {
+            let returnDate = new Date();
+            td.innerHTML = "";
+            td.textContent = returnDate.toLocaleString();
+
+            let cardIndex = cardsArray.findIndex(c => c.id === cardInfo.id);
+            console.log(cardIndex);
+            cardsArray[cardIndex].returnDate = returnDate;
+            saveCardsArray();
+        });
+    } else 
+    td.textContent = new Date(cardInfo["returnDate"]).toLocaleString();
     tr.appendChild(td);
 
     tbody.appendChild(tr);
+}
+
+for (const cardInfo of cardsArray) {
+    createCardTable(cardInfo);
 }

@@ -278,6 +278,13 @@ hr {
   margin-top: 1em;
 }
 
+.add-visitor form select, .add-card form select {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
 .cards-table {
   padding: 1em 1.7em;
 }
@@ -291,6 +298,14 @@ hr {
 .cards-table table td {
   border: 2px solid grey;
   padding: 0.5rem;
+}
+
+.cards-table .return-date-button {
+  text-align: center;
+}
+
+.cards-table .return-date-button svg {
+  width: 30px;
 }
 
 .stats-box .bigtxt {

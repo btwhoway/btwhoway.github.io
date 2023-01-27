@@ -216,14 +216,25 @@ hr {
         :last-child {
             margin-top: 1em;
         }
+
+        select{
+            width: 100%;
+            padding: 10px 5px;
+            font-size: 15px;
+            margin-top: 5px;
+        }
     }
 }
 
 .cards-table {
     @include basic-table;
+    .return-date-button{
+        text-align: center;
+        svg {
+            width: 30px;
+        }
+    }
 }
-
-
 
 
 

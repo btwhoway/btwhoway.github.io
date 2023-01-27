@@ -48,7 +48,6 @@ function createTableRow(visitor) {
     let tr = document.createElement("tr");
     let td;
 
-
     for (let data in visitor) {
         let td = document.createElement("td");
         td.textContent = visitor[data];
