@@ -91,6 +91,8 @@ topNavigation.addEventListener("click", function (event) {
     }
 
     const sectionName = target.id;
+    localStorage.setItem("selectedTab", sectionName);
+
     highlightNavTab(sectionName);
     showSection(sectionName);
 });
@@ -235,9 +237,10 @@ function addTableRow(bookData) {
             editingRow.remove();
             booksModalClose();
             let bookIndex = booksArray.findIndex(b => {
-            console.log(b.book_id, bookData.book_id);
+                console.log(b.book_id, bookData.book_id);
 
-                return b.book_id === bookData.book_id});
+                return b.book_id === bookData.book_id
+            });
             console.log(bookIndex);
             booksArray.splice(bookIndex, 1);
             saveBooksArray();
@@ -355,3 +358,9 @@ function editBook(bookData) {
 
 }
 
+const selectedTab = localStorage.getItem("selectedTab");
+
+if (selectedTab) {
+    highlightNavTab(selectedTab);
+    showSection(selectedTab);
+}
