@@ -1,27 +1,27 @@
 /*
 let visitorsArray = [
     {
-        "id": 1,
+        "id": 22435009,
         "name": "John Snow",
         "phone": "380986575851",
     },
     {
-        "id": 2,
+        "id": 85851813,
         "name": "Dean Doe",
         "phone": "380986573851",
     },
     {
-        "id": 3,
+        "id": 86935761,
         "name": "Anna Howay",
         "phone": "380986675851",
     },
     {
-        "id": 4,
+        "id": 64471454,
         "name": "Lora Lane",
         "phone": "380986595851",
     },
     {
-        "id": 5,
+        "id": 40436173,
         "name": "Cristine Cole",
         "phone": "380981575851",
     },
@@ -29,7 +29,7 @@ let visitorsArray = [
 */
 
 let visitorsArray = [];
-// localStorage.setItem("visitorsArray", JSON.stringify(visitorsArray));
+//localStorage.setItem("visitorsArray", JSON.stringify(visitorsArray));
 visitorsArray = JSON.parse(localStorage.getItem('visitorsArray'));
 
 
@@ -46,7 +46,7 @@ let visitorsForm = document.querySelector(".add-visitor");
 function createTableRow(visitor) {
     let tbody = document.querySelector("tbody.visitors-tbody");
     let tr = document.createElement("tr");
-    let td = document.createElement("td");
+    let td;
 
 
     for (let data in visitor) {
@@ -116,6 +116,12 @@ for (const visitor of visitorsArray) {
 }
 
 function addVisitorModal() {
+    let visitorId = document.querySelector("form input[name='id']");
+    
+    let randomInt = Math.floor(Math.random() * 100000000);
+    
+    visitorId.value = randomInt;
+
     let overlay = document.querySelector(".overlay");
 
     overlay.classList.remove("hidden");
