@@ -107,10 +107,14 @@ function createCardTable(cardInfo) {
 
     td = document.createElement("td");
     td.textContent = cardInfo["visitor"];
+    td.style.textTransform = "capitalize";
+
     tr.appendChild(td);
 
     td = document.createElement("td");
     td.textContent = cardInfo["book"];
+    td.style.textTransform = "capitalize";
+
     tr.appendChild(td);
 
     let borrowDate = new Date(cardInfo["borrowDate"]).toLocaleString();

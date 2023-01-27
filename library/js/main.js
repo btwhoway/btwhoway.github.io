@@ -1,7 +1,7 @@
 /*
 let booksArray = [
     {
-        "book_id": "1",
+        "book_id": "66736243",
         "book_title": "Twilight",
         "book_author": "Stephanie Meyer",
         "book_published": "2005",
@@ -10,7 +10,7 @@ let booksArray = [
         "book_publisher": "Little, Brown and Company"
     },
     {
-        "book_id": "2",
+        "book_id": "11625765",
         "book_title": "New moon",
         "book_author": "Stephanie Meyer",
         "book_published": "2006",
@@ -19,7 +19,7 @@ let booksArray = [
         "book_publisher": "Little, Brown and Company"
     },
     {
-        "book_id": "3",
+        "book_id": "57427133",
         "book_title": "Eclipse",
         "book_author": "Stephanie Meyer",
         "book_published": "2007",
@@ -28,7 +28,7 @@ let booksArray = [
         "book_publisher": "Little, Brown and Company"
     },
     {
-        "book_id": "4",
+        "book_id": "73131384",
         "book_title": "Breaking dawn",
         "book_author": "Stephanie Meyer",
         "book_published": "2008",
@@ -37,7 +37,7 @@ let booksArray = [
         "book_publisher": "Little, Brown and Company"
     },
     {
-        "book_id": "5",
+        "book_id": "34365183",
         "book_title": "Interview with the vampire",
         "book_author": "Anne Rice",
         "book_published": "1976",
@@ -188,8 +188,8 @@ function submitForm(event) {
             booksArray[bookIndex] = { ...booksArray[bookIndex], ...bookData };
             bookData = booksArray[bookIndex];
         }
-    } else {
-        bookData["book_id"] = String(booksArray.length + 1);
+    } else { //перевірити чи такого індексу не існує
+        bookData["book_id"] = Math.floor(Math.random() * 100000000);
         booksArray.push(bookData);
     }
 
@@ -234,8 +234,12 @@ function addTableRow(bookData) {
         deleteBtn.addEventListener("click", function () {
             editingRow.remove();
             booksModalClose();
+            let bookIndex = booksArray.findIndex(b => {
+            console.log(b.book_id, bookData.book_id);
 
-            booksArray.splice((+bookData["book_id"] - 1), 1);
+                return b.book_id === bookData.book_id});
+            console.log(bookIndex);
+            booksArray.splice(bookIndex, 1);
             saveBooksArray();
         });
 
