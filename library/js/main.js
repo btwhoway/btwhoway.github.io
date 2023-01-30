@@ -114,9 +114,29 @@ function showSection(sectionName) {
     const section = document.querySelector(`[data-section=${sectionName}]`);
     if (!section) return;
     section.hidden = false;
+
+    switch (sectionName) {
+        case "books": {
+            buildBooksTable();
+        } break;
+        case "visitors": {
+            buildVisitorsTable();
+        } break;
+        case "cards": {
+            buildCardsTable();
+        } break;
+    }
+
 }
 
+function buildBooksTable() {
+    document.querySelector(".books-table tbody").innerHTML = "";
+    for (const book of booksArray) {
+        addTableRow(book);
+    }
+}
 
+buildBooksTable();
 
 
 
@@ -308,9 +328,7 @@ function sortBooks() {
     });
 }
 
-for (const book of booksArray) {
-    addTableRow(book);
-}
+
 
 document.getElementById("search").addEventListener("click", searchTable);
 
@@ -360,7 +378,9 @@ function editBook(bookData) {
 
 const selectedTab = localStorage.getItem("selectedTab");
 
-if (selectedTab) {
-    highlightNavTab(selectedTab);
-    showSection(selectedTab);
-}
+setTimeout(() => {
+    if (selectedTab) {
+        highlightNavTab(selectedTab);
+        showSection(selectedTab);
+    }
+}, 10);

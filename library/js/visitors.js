@@ -110,9 +110,14 @@ function editVisitor(visitor) {
 
 addVisitorBtn.addEventListener("click", () => { isEditing = false; editingObject = null; addVisitorModal() });
 
-for (const visitor of visitorsArray) {
-    createTableRow(visitor);
+function buildVisitorsTable(){
+    document.querySelector(".visitors-table tbody").innerHTML = "";
+
+    for (const visitor of visitorsArray) {
+        createTableRow(visitor);
+    }
 }
+
 
 function addVisitorModal() {
     let visitorId = document.querySelector("form input[name='id']");

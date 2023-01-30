@@ -94,6 +94,8 @@ function submitNewCard(event) {
     createCardTable(cardInfo);
 
     cardsModalClose();
+
+    changingAmountOfBooks(cardInfo);
 }
 
 
@@ -138,8 +140,8 @@ function createCardTable(cardInfo) {
             cardsArray[cardIndex].returnDate = returnDate;
             saveCardsArray();
         });
-    } else 
-    td.textContent = new Date(cardInfo["returnDate"]).toLocaleString();
+    } else
+        td.textContent = new Date(cardInfo["returnDate"]).toLocaleString();
     tr.appendChild(td);
 
     tbody.appendChild(tr);
@@ -216,6 +218,31 @@ function sortCards() {
     });
 }
 
-for (const cardInfo of cardsArray) {
-    createCardTable(cardInfo);
+function buildCardsTable() {
+    document.querySelector(".cards-table tbody").innerHTML = "";
+
+    for (const cardInfo of cardsArray) {
+        createCardTable(cardInfo);
+    }
+}
+
+function changingAmountOfBooks(cardInfo) {
+    let borrowedBookName = cardInfo["book"];
+    console.log(borrowedBookName);
+
+    //booksArray глобальна змінна в файлі main.js
+    // let booksArray = JSON.parse(localStorage.getItem("booksArray"));
+    let LSBook = booksArray.find(b => b.book_title === borrowedBookName);
+
+    console.log(LSBook);
+
+
+    if (LSBook["book_quantity"] > 0) {
+        LSBook["book_quantity"]--;
+        saveBooksArray();
+    } else {
+        alert("No books available");
+        return;
+    }
+
 }
