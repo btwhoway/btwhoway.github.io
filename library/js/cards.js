@@ -170,6 +170,52 @@ function searchCards() {
     }
 }
 
+let sortCardsBtn = document.querySelector(".sort-cards");
+sortCardsBtn.addEventListener("click", () => { sortCards() });
+
+
+function sortCards() {
+    const tbody = document.querySelector(".cards-table tbody");
+    const rows = Array.from(tbody.rows);
+
+    const selectedSortOption = document.querySelector("select#sort-cards").value;
+
+    let sortIndex;
+
+    switch (selectedSortOption) {
+        case "borrow":
+            sortIndex = 3;
+            break;
+        case "return":
+            sortIndex = 4;
+            break;
+        default:
+            break;
+    };
+
+    const sortedArray = rows.sort(function (a, b) {
+        const title1 = a.cells[sortIndex].textContent;
+        const title2 = b.cells[sortIndex].textContent;
+
+        if (title1 < title2) {
+            return -1;
+        }
+
+        if (title1 > title2) {
+            return 1;
+        }
+
+        return 0;
+    });
+
+    tbody.innerHTML = '';
+
+    sortedArray.forEach(el => {
+        tbody.appendChild(el);
+        console.log("works")
+    });
+}
+
 for (const cardInfo of cardsArray) {
     createCardTable(cardInfo);
 }
