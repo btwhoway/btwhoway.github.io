@@ -95,7 +95,7 @@ function submitNewCard(event) {
 
     cardsModalClose();
 
-    changingAmountOfBooks(cardInfo);
+    substractingAmountOfBooks(cardInfo);
 }
 
 
@@ -139,6 +139,8 @@ function createCardTable(cardInfo) {
             console.log(cardIndex);
             cardsArray[cardIndex].returnDate = returnDate;
             saveCardsArray();
+
+            addingReturnedBook(cardInfo);
         });
     } else
         td.textContent = new Date(cardInfo["returnDate"]).toLocaleString();
@@ -226,16 +228,13 @@ function buildCardsTable() {
     }
 }
 
-function changingAmountOfBooks(cardInfo) {
+function substractingAmountOfBooks(cardInfo) {
     let borrowedBookName = cardInfo["book"];
     console.log(borrowedBookName);
 
     //booksArray глобальна змінна в файлі main.js
     // let booksArray = JSON.parse(localStorage.getItem("booksArray"));
     let LSBook = booksArray.find(b => b.book_title === borrowedBookName);
-
-    console.log(LSBook);
-
 
     if (LSBook["book_quantity"] > 0) {
         LSBook["book_quantity"]--;
@@ -245,4 +244,13 @@ function changingAmountOfBooks(cardInfo) {
         return;
     }
 
+}
+
+function addingReturnedBook(cardInfo) {
+    let borrowedBookName = cardInfo["book"];
+
+    let LSBook = booksArray.find(b => b.book_title === borrowedBookName);
+
+    LSBook["book_quantity"]++;
+    saveBooksArray();
 }
