@@ -44,23 +44,33 @@ function showPopular(booksCount) {
 
     for (let i = 0; i < 5; i++) {
         let book = booksCount[i];
+        if (!book){
+            continue;
+        }
         let p = document.createElement("p");
         p.textContent = `${book[0]}: ${book[1]}`;
         p.style.textTransform = "capitalize";
 
         div.appendChild(p);
+
     }
 
 }
 
 let booksCount = countNumberOfBooks();
-showPopular(booksCount);
+
+if (booksCount.length) {
+    showPopular(booksCount);
+}
 
 function showActiveVisitors(visitorsCount) {
     let div2 = document.querySelector(".active-visitors");
 
     for (let i = 0; i < 5; i++) {
-        let visitor = visitorsCount[i]
+        let visitor = visitorsCount[i];
+        if (!visitor){
+            continue;
+        }
         let p = document.createElement("p");
         p.style.textTransform = "capitalize";
 
@@ -70,5 +80,8 @@ function showActiveVisitors(visitorsCount) {
 }
 
 let visitorsCount = countNumberOfVisitors();
-showActiveVisitors(visitorsCount);
+
+if(visitorsCount.length) {
+    showActiveVisitors(visitorsCount);
+}
 

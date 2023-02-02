@@ -1,0 +1,105 @@
+body {
+    background-color: #0f1c2d;
+    font-family     : 'Montserrat', sans-serif;
+}
+
+header {
+    margin-right: 10rem;
+
+    p {
+        color      : #a2eeee;
+        font-size  : 1.8em;
+        font-weight: lighter;
+        text-shadow: 2px 2px 2px #414535;
+    }
+}
+
+ul {
+    list-style-type: none;
+    display        : flex;
+    justify-content: right;
+
+    li {
+        padding: 0 1.5em;
+    }
+}
+
+
+.projects {
+    display          : flex;
+    flex-direction   : column;
+    align-items      : right;
+    color            : white;
+    width            : 500px;
+    padding          : 30px;
+    border-radius    : 20px;
+    margin-top       : 60px;
+    text-align       : left;
+    flex-wrap        : wrap;
+    border           : 1px solid #96BBBB;
+    /* box-shadow    : 1px 1px 20px 6px #96BBBB; */
+    margin-bottom    : 50px;
+    margin-left      : 20px;
+
+    .old-projects {
+        p {
+            padding    : 3px;
+            color      : #dbeaff;
+            font-size  : 17px;
+            font-weight: lighter;
+        }
+
+        p:hover {
+            color      : #96BBBB;
+            text-shadow: 2px 2px 2px #414535;
+        }
+    }
+}
+
+.show-projects {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+    button {
+        padding      : 10px;
+        text-align   : center;
+        border-radius: 10px;
+        background   : #0f1c2d;
+        color        : white;
+    }
+}
+
+.hidden {
+    display: none
+}
+
+a {
+    text-decoration: none;
+    color          : unset;
+}
+
+
+#message {
+    width           : 500px;
+    background-color: white;
+    border-radius   : 20px;
+    top             : 20px;
+    right           : 20px;
+    position        : fixed;
+
+    p {
+        color     : red;
+        padding   : 10px;
+        text-align: center;
+        font-size : small;
+    }
+
+    img {
+        width        : 100%;
+        object-fit   : contain;
+        overflow     : hidden;
+        border-radius: 20px;
+
+    }
+}

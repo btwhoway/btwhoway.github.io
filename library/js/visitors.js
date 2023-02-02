@@ -32,6 +32,9 @@ let visitorsArray = [];
 //localStorage.setItem("visitorsArray", JSON.stringify(visitorsArray));
 visitorsArray = JSON.parse(localStorage.getItem('visitorsArray'));
 
+if (visitorsArray === null) {
+    visitorsArray = [];
+}
 
 function saveVisitorsArray() {
     saveObjToLocalStorage("visitorsArray", visitorsArray);

@@ -52,6 +52,10 @@ let booksArray = [];
 // localStorage.setItem("booksArray", JSON.stringify(booksArray));
 booksArray = JSON.parse(localStorage.getItem('booksArray'));
 
+if (booksArray === null) {
+    booksArray = [];
+}
+
 // let somearr =
 // {
 //     "book_title": "some book",

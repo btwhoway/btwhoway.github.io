@@ -5,6 +5,10 @@ if (LSCardsArray) {
     cardsArray = LSCardsArray;
 }
 
+if (cardsArray === null) {
+    cardsArray = [];
+}
+
 function saveCardsArray() {
     saveObjToLocalStorage("cardsArray", cardsArray);
 }
