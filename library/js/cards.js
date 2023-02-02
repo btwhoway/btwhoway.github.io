@@ -122,6 +122,7 @@ function createCardTable(cardInfo) {
     let borrowDate = new Date(cardInfo["borrowDate"]).toLocaleString();
     td = document.createElement("td");
     td.textContent = borrowDate;
+    td.setAttribute("data-time", new Date(cardInfo["borrowDate"]).getTime());
     tr.appendChild(td);
 
     td = document.createElement("td");
@@ -144,6 +145,7 @@ function createCardTable(cardInfo) {
         });
     } else
         td.textContent = new Date(cardInfo["returnDate"]).toLocaleString();
+    td.setAttribute("data-time", new Date(cardInfo["returnDate"]).getTime());
     tr.appendChild(td);
 
     tbody.appendChild(tr);
@@ -184,28 +186,42 @@ function sortCards() {
 
     const selectedSortOption = document.querySelector("select#sort-cards").value;
 
-    let sortIndex;
-
-    switch (selectedSortOption) {
-        case "borrow":
-            sortIndex = 3;
-            break;
-        case "return":
-            sortIndex = 4;
-            break;
-        default:
-            break;
-    };
-
     const sortedArray = rows.sort(function (a, b) {
-        const title1 = a.cells[sortIndex].textContent;
-        const title2 = b.cells[sortIndex].textContent;
+        let value1;
+        let value2;
+        let dataType = "string";
 
-        if (title1 < title2) {
+        switch (selectedSortOption) {
+            case "borrow":
+                value1 = a.cells[3].getAttribute("data-time");
+                value2 = b.cells[3].getAttribute("data-time");
+                dataType = "number";
+                break;
+            case "return":
+                value1 = a.cells[4].getAttribute("data-time");
+                value2 = b.cells[4].getAttribute("data-time");
+                dataType = "number";
+                break;
+        };
+
+        if (dataType === "number") {
+            value1 = parseInt(value1);
+            value2 = parseInt(value2);
+
+            if (isNaN(value1)) {
+                value1 = 0;
+            }
+
+            if (isNaN(value2)) {
+                value2 = 0;
+            }
+        }
+
+        if (value1 < value2) {
             return -1;
         }
 
-        if (title1 > title2) {
+        if (value1 > value2) {
             return 1;
         }
 
