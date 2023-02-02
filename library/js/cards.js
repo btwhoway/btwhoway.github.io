@@ -98,7 +98,6 @@ function submitNewCard(event) {
     substractingAmountOfBooks(cardInfo);
 }
 
-
 function createCardTable(cardInfo) {
     let tbody = document.querySelector(".cards-table tbody");
     let tr = document.createElement("tr");
@@ -179,7 +178,6 @@ function searchCards() {
 let sortCardsBtn = document.querySelector(".sort-cards");
 sortCardsBtn.addEventListener("click", () => { sortCards() });
 
-
 function sortCards() {
     const tbody = document.querySelector(".cards-table tbody");
     const rows = Array.from(tbody.rows);
@@ -249,7 +247,6 @@ function substractingAmountOfBooks(cardInfo) {
     console.log(borrowedBookName);
 
     //booksArray глобальна змінна в файлі main.js
-    // let booksArray = JSON.parse(localStorage.getItem("booksArray"));
     let LSBook = booksArray.find(b => b.book_title === borrowedBookName);
 
     if (LSBook["book_quantity"] > 0) {

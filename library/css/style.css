@@ -246,16 +246,19 @@ hr {
   text-align: center;
 }
 
-.add-visitor, .add-card {
+.add-visitor,
+.add-card {
   padding: 3.5em 4em;
 }
 
-.add-visitor .modal-header .modal-title, .add-card .modal-header .modal-title {
+.add-visitor .modal-header .modal-title,
+.add-card .modal-header .modal-title {
   margin-left: 0rem;
   font-size: 1.3em;
 }
 
-.add-visitor form, .add-card form {
+.add-visitor form,
+.add-card form {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -266,19 +269,23 @@ hr {
           justify-content: center;
 }
 
-.add-visitor form label, .add-card form label {
+.add-visitor form label,
+.add-card form label {
   margin: 1em 0 0;
 }
 
-.add-visitor form input, .add-card form input {
+.add-visitor form input,
+.add-card form input {
   width: 100%;
 }
 
-.add-visitor form :last-child, .add-card form :last-child {
+.add-visitor form :last-child,
+.add-card form :last-child {
   margin-top: 1em;
 }
 
-.add-visitor form select, .add-card form select {
+.add-visitor form select,
+.add-card form select {
   width: 100%;
   padding: 10px 5px;
   font-size: 15px;
@@ -318,8 +325,23 @@ hr {
   padding: 2rem;
 }
 
-.stats-box .popular-books, .stats-box .active-visitors {
-  padding: 0 2rem;
+.stats-box .popular-books,
+.stats-box .active-visitors {
+  margin: 0 2rem;
   font-weight: 200;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+footer img {
+  width: 335px;
 }
 /*# sourceMappingURL=style.css.map */

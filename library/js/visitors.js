@@ -76,11 +76,11 @@ function createTableRow(visitor) {
             const visitorIndex = visitorsArray.findIndex((b) => b.id === editingVisitorId);
             console.log(visitorIndex);
 
-            if (visitorIndex !== -1){
+            if (visitorIndex !== -1) {
                 visitorsArray.splice(visitorIndex, 1);
                 saveVisitorsArray();
             }
-            
+
         });
     });
 
@@ -110,7 +110,7 @@ function editVisitor(visitor) {
 
 addVisitorBtn.addEventListener("click", () => { isEditing = false; editingObject = null; addVisitorModal() });
 
-function buildVisitorsTable(){
+function buildVisitorsTable() {
     document.querySelector(".visitors-table tbody").innerHTML = "";
 
     for (const visitor of visitorsArray) {
@@ -118,12 +118,11 @@ function buildVisitorsTable(){
     }
 }
 
-
 function addVisitorModal() {
     let visitorId = document.querySelector("form input[name='id']");
-    
+
     let randomInt = Math.floor(Math.random() * 100000000);
-    
+
     visitorId.value = randomInt;
 
     let overlay = document.querySelector(".overlay");
