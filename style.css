@@ -1,10 +1,26 @@
 body {
   background-color: #0f1c2d;
   font-family: 'Montserrat', sans-serif;
+  width: 75rem;
+  margin: auto;
 }
 
 header {
-  margin-right: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div p {
+  padding: 0 1.5em;
 }
 
 header p {
@@ -28,6 +44,15 @@ ul li {
   padding: 0 1.5em;
 }
 
+.main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .projects {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,6 +66,7 @@ ul li {
           align-items: right;
   color: white;
   width: 500px;
+  height: auto;
   padding: 30px;
   border-radius: 20px;
   margin-top: 60px;
@@ -53,14 +79,14 @@ ul li {
   margin-left: 20px;
 }
 
-.projects .old-projects p {
+.projects p {
   padding: 3px;
   color: #dbeaff;
   font-size: 17px;
   font-weight: lighter;
 }
 
-.projects .old-projects p:hover {
+.projects p:hover {
   color: #96BBBB;
   text-shadow: 2px 2px 2px #414535;
 }
@@ -83,6 +109,7 @@ ul li {
   border-radius: 10px;
   background: #0f1c2d;
   color: white;
+  font-size: 14px;
 }
 
 .hidden {
