@@ -3,12 +3,11 @@ document.querySelector(".show-projects button").addEventListener("click", () => 
     if (oldProjectsDiv.classList.contains("hidden")) {
         oldProjectsDiv.classList.remove("hidden");
         document.querySelector(".show-projects button").textContent = "hide";
-    } else{
+    } else {
         oldProjectsDiv.classList.add("hidden");
         document.querySelector(".show-projects button").textContent = "show";
     }
 })
-
 
 document.querySelector("#movie").addEventListener("click", () => {
     let errorMessage = document.querySelector("#message");
